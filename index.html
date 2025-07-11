@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Ministry of Women Affairs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .top-bar {
+            background-color: #014903;
+            color: white;
+            padding: 6px 0;
+            font-size: 12px;
+        }
+        .main-nav {
+            background-color: #014903;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .main-nav .navbar-brand img {
+            height: 80px;
+            transition: all 0.3s ease;
+        }
+        .main-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 12px 15px !important;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+        .main-nav .nav-link:hover {
+            color: #f9ca24 !important;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .section-title {
+            color: #0c2461;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #f9ca24;
+        }
+        .feature-box {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .feature-box i {
+            font-size: 40px;
+            color: #0c2461;
+            margin-bottom: 20px;
+        }
+        .news-item {
+            margin-bottom: 30px;
+        }
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .news-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .news-title {
+            color: #0c2461;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .read-more {
+            color: #0c2461;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .read-more i {
+            margin-left: 5px;
+            transition: all 0.3s ease;
+        }
+        .read-more:hover {
+            color: #f9ca24;
+        }
+        .read-more:hover i {
+            margin-left: 10px;
+        }
+        footer {
+            background-color: #0c2461;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        .footer-widget h4 {
+            color: #f9ca24;
+            font-size: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-widget h4:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #f9ca24;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #f9ca24;
+            padding-left: 5px;
+        }
+        .social-links a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            background: #f9ca24;
+            color: #0c2461;
+        }
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            color: #aaa;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <span><i class="fas fa-phone-alt me-2"></i>+1 234 567 8900</span>
+                    <span class="ms-4"><i class="fas fa-envelope me-2"></i>info@government-service.org</span>
+                </div>
+                <div class="col-md-6 text-md-end mt-2 mt-md-0">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1 class="text-white m-0" style="font-size: 1.5rem;">Federal Ministry of Women Affairs</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Mandate</a></li>
+                            <li><a class="dropdown-item" href="#">Vision & Mission</a></li>
+                            <li><a class="dropdown-item" href="#">Leadership</a></li>
+                            <li><a class="dropdown-item" href="#">Departments</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">News & Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="fw-bold mb-3" style="font-size: 1.8rem;">Welcome to Federal Ministry of Women Affairs</h1>
+            <p class="lead mb-5">Empowering women, transforming communities</p>
+            <a href="#" class="btn btn-warning btn-lg">Explore More</a>
+        </div>
+    </section>
+
+    <!-- Honorable Minister Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <a href="page-head_of_service">
+                            <img src="images/chief.jpg" class="img-fluid rounded-circle mb-3" style="max-width: 200px;" title="Honorable Imaan Sulaiman-Ibrahim" alt="Honorable Imaan Sulaiman-Ibrahim">
+                        </a>
+                        <a href="page-head_of_service" class="text-decoration-none text-dark">
+                            <h5 class="mb-1">Honorable Imaan Sulaiman-Ibrahim</h5>
+                            <p class="text-muted">Honorable Minister of Women Affairs</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead">The Honorable Minister leads the Federal Ministry of Women Affairs in its mission to promote gender equality, empower women, and protect the rights of women and children across Nigeria. With extensive experience in public service, she is committed to advancing policies and programs that enhance the welfare and development of women in all spheres of national life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-bullhorn"></i>
+                        <h4>Announcements</h4>
+                        <p>Latest circulars, public notices and official statements from the government.</p>
+                        <a href="#" class="read-more">View All <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h4>Events</h4>
+                        <p>Upcoming workshops, training programs and official events calendar.</p>
+                        <a href="#" class="read-more">View Calendar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>Publications</h4>
+                        <p>Annual reports, policy documents and guidelines for civil servants.</p>
+                        <a href="#" class="read-more">Browse Library <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-landmark me-2"></i>Our Mandate</h3>
+                        <p>The government is responsible for the formulation and implementation of policies and programs that will ensure the highest standard of efficiency, discipline, integrity and transparency in the public service.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-eye me-2"></i>Our Vision</h3>
+                        <p>To be the leading provider of efficient and accessible government services.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-bullseye me-2"></i>Our Mission</h3>
+                        <p>We are dedicated to providing efficient and effective government services to all citizens.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-users me-2"></i>Who We Are</h3>
+                        <p>The government is the central administrative body responsible for the coordination and management of the public service.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Updates -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="section-title">Latest News & Updates</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="news-item">
+                                <img src="images/news1.jpg" alt="News 1" class="img-fluid">
+                                <span class="news-date"><i class="far fa-calendar-alt me-2"></i>July 10, 2025</span>
+                                <h4 class="news-title">Government Approves New Public Service Reform Initiative</h4>
+                                <p>The government has approved a comprehensive reform package aimed at enhancing efficiency in the public service.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="news-item">
+                                <img src="images/news2.jpg" alt="News 2" class="img-fluid">
+                                <span class="news-date"><i class="far fa-calendar-alt me-2"></i>July 5, 2025</span>
+                                <h4 class="news-title">Government Launches Digital Transformation Program</h4>
+                                <p>The government has commenced the implementation of a digital transformation program to modernize public service operations.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="news-item">
+                                <img src="images/news3.jpg" alt="News 3" class="img-fluid">
+                                <span class="news-date"><i class="far fa-calendar-alt me-2"></i>June 28, 2025</span>
+                                <h4 class="news-title">Public Servants to Undergo Capacity Building</h4>
+                                <p>A new capacity building initiative has been introduced to enhance the skills of public servants across all levels.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="news-item">
+                                <img src="images/news4.jpg" alt="News 4" class="img-fluid">
+                                <span class="news-date"><i class="far fa-calendar-alt me-2"></i>June 15, 2025</span>
+                                <h4 class="news-title">Government Partners with Private Sector on Training</h4>
+                                <p>New partnership announced to provide specialized training for public servants in collaboration with leading private sector organizations.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-outline-primary">View All News & Updates</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-white p-4 rounded shadow-sm mb-4">
+                        <h4 class="section-title mb-4">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a href="#" class="text-decoration-none d-flex align-items-center"><i class="fas fa-chevron-right me-2 text-primary"></i> Public Service Rules</a></li>
+                            <li class="mb-3"><a href="#" class="text-decoration-none d-flex align-items-center"><i class="fas fa-chevron-right me-2 text-primary"></i> Training Calendar</a></li>
+                            <li class="mb-3"><a href="#" class="text-decoration-none d-flex align-items-center"><i class="fas fa-chevron-right me-2 text-primary"></i> Career Opportunities</a></li>
+                            <li class="mb-3"><a href="#" class="text-decoration-none d-flex align-items-center"><i class="fas fa-chevron-right me-2 text-primary"></i> Staff Verification Portal</a></li>
+                            <li class="mb-3"><a href="#" class="text-decoration-none d-flex align-items-center"><i class="fas fa-chevron-right me-2 text-primary"></i> Pension Matters</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-primary text-white p-4 rounded">
+                        <h4 class="text-white mb-4">Need Help?</h4>
+                        <p>Contact our help desk for assistance with any inquiries or issues you may have.</p>
+                        <a href="#" class="btn btn-light mt-2">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Publications & Downloads</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
+                            <h5>Public Service Rules</h5>
+                            <p class="text-muted small">Updated: June 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-file-word fa-3x text-primary mb-3"></i>
+                            <h5>Annual Report 2024</h5>
+                            <p class="text-muted small">Published: January 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download DOC</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-file-excel fa-3x text-success mb-3"></i>
+                            <h5>Performance Data</h5>
+                            <p class="text-muted small">Q2 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download XLS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-file-archive fa-3x text-warning mb-3"></i>
+                            <h5>Policy Documents</h5>
+                            <p class="text-muted small">Collection (ZIP)</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download ZIP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a href="#" class="btn btn-primary">View All Publications</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-5 text-white" style="background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%);">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="display-4 fw-bold">50+</div>
+                    <p>MDAs Served</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="display-4 fw-bold">150K+</div>
+                    <p>Public Servants</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="display-4 fw-bold">24/7</div>
+                    <p>Service Delivery</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="display-4 fw-bold">100+</div>
+                    <p>Training Programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="footer-widget">
+                        <h4>Federal Ministry of Women Affairs</h4>
+                        <p>Empowering women for national development</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-widget">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">News & Events</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-widget">
+                        <h4>Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Recruitment & Promotion</a></li>
+                            <li><a href="#">Training & Development</a></li>
+                            <li><a href="#">Pension Administration</a></li>
+                            <li><a href="#">Policy Formulation</a></li>
+                            <li><a href="#">Service Delivery</a></li>
+                            <li><a href="#">Staff Welfare</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4>Contact Us</h4>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt me-2"></i> Federal Secretariat Complex, Phase II, Shehu Shagari Way, Abuja, FCT, Nigeria</p>
+                            <p class="mb-2"><i class="fas fa-phone-alt me-2"></i> +234 9 460 2600</p>
+                            <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@ohcsf.gov.ng</p>
+                            <p><i class="fas fa-clock me-2"></i> Mon - Fri: 8:00 AM - 4:00 PM</p>
+                        </address>
+                        <div class="mt-4">
+                            <h5>Newsletter</h5>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                                <button class="btn btn-warning" type="button">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        &copy; 2025 Office of the Head of the Civil Service of the Federation. All Rights Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="text-white me-3">Privacy Policy</a>
+                        <a href="#" class="text-white">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
