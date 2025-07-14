@@ -16,7 +16,7 @@
   "author": "Federal Ministry of Women Affairs",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
