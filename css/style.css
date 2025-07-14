@@ -11,6 +11,21 @@
 }
 
 body {
+
+.left-align-section {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .left-align-section {
+        max-width: 600px;
+        margin-left: 40px !important;
+    }
+}
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
@@ -67,6 +82,25 @@ a {
 
 .navbar-brand img {
     transition: all 0.3s ease;
+}
+
+.main-nav .navbar-brand img {
+    height: 80px;
+    transition: all 0.3s ease;
+}
+
+.main-nav .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .navbar-brand h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
 }
 
 .navbar.scrolled {
@@ -141,6 +175,52 @@ a {
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+
+/* FMWA Logo */
+.fmwa-logo {
+    height: 161.7px;
+    width: auto;
+    background-color: #014903;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+
+
+.fmwa-navbar-title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    margin-left: 0;
+    margin-right: 18px;
+    letter-spacing: 0.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo-divider {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 90px;
+    background: #fff;
+    margin: 0 20px 0 4px;
+    border-radius: 1px;
+}
+
+
+
+.fmwa-logo-stretch {
+    display: block;
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    margin-left: 0;
+    margin-right: 0;
+    background: none;
+    padding: 0;
+    border-radius: 0;
 }
 
 /* Rounded Circle Images */
@@ -293,6 +373,10 @@ footer h5 {
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 0.75rem;
+}
+
+footer {
+    background-color: #014903 !important;
 }
 
 footer h5::after {
