@@ -33,6 +33,28 @@
         .main-nav .nav-link:hover {
             color: #f9ca24 !important;
         }
+        .welcome-section {
+            background-color: #014903;
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            margin: 0;
+            width: 100%;
+        }
+        .welcome-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 4px !important;
+        }
+        .welcome-section p {
+            font-size: 0.9rem;
+            margin-bottom: 4px !important;
+        }
+        .welcome-section .btn {
+            padding: 2px 12px;
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+        
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg');
             background-size: cover;
@@ -161,6 +183,44 @@
             background: #f9ca24;
             color: #0c2461;
         }
+        /* Compact News Section */
+        .news-section {
+            padding: 1.5rem 0;
+        }
+        .news-section .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .news-item {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .news-item img {
+            max-height: 120px;
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+        }
+        .news-date {
+            font-size: 0.75rem;
+            color: #6c757d;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .news-title {
+            font-size: 1rem;
+            margin: 0.25rem 0;
+        }
+        .news-item p {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        .read-more {
+            font-size: 0.8rem;
+        }
+        .read-more i {
+            font-size: 0.7rem;
+        }
         .copyright {
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
@@ -188,17 +248,42 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#" title="Go to home page">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" title="Learn about the ministry">
-                            About Us
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" title="View our mandate">Mandate</a></li>
-                            <li><a class="dropdown-item" href="#" title="Learn about our vision and mission">Vision & Mission</a></li>
-                            <li><a class="dropdown-item" href="#" title="Meet our leadership">Leadership</a></li>
-                            <li><a class="dropdown-item" href="#" title="Explore our departments">Departments</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="View our services">Services</a></li>
+    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" title="Learn about the ministry" aria-expanded="false">
+        About Us
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+        <li><a class="dropdown-item" href="#" title="View our mandate">Mandate</a></li>
+        <li><a class="dropdown-item" href="#" title="Read our mission">Mission</a></li>
+        <li><a class="dropdown-item" href="#" title="View our ordanogram">Ordanogram</a></li>
+        <li><a class="dropdown-item" href="#" title="Learn about our vision">Vision</a></li>
+    </ul>
+</li>
+                    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="departmentDropdown" role="button" data-bs-toggle="dropdown" title="View our departments" aria-expanded="false">
+        Department
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="departmentDropdown">
+        <li><a class="dropdown-item" href="#" title="Child Development">Child Development</a></li>
+        <li><a class="dropdown-item" href="#" title="Community Development & Social Intervention">Community Development & Social Intervention</a></li>
+                <li><a class="dropdown-item" href="#" title="Finance & Account">Finance & Account</a></li>
+        <li><a class="dropdown-item" href="#" title="Gender Affairs">Gender Affairs</a></li>
+        <li><a class="dropdown-item" href="#" title="General Services">General Services</a></li>
+        <li><a class="dropdown-item" href="#" title="Nutrition">Nutrition</a></li>
+        <li><a class="dropdown-item" href="#" title="Planning Research & Statistics">Planning Research & Statistics</a></li>
+        <li><a class="dropdown-item" href="#" title="Procurement">Procurement</a></li>
+        <li><a class="dropdown-item" href="#" title="Reform Coordination & Services Improvement">Reform Coordination & Services Improvement</a></li>
+        <li><a class="dropdown-item" href="#" title="Women Development">Women Development</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-submenu position-relative">
+  <a class="dropdown-item dropdown-toggle division-special" href="#" id="divisionsDropdown" role="button" aria-expanded="false" title="Divisions">DIVISIONS</a>
+  <ul class="dropdown-menu" aria-labelledby="divisionsDropdown">
+    <li><a class="dropdown-item" href="#" title="Legal Service">Legal Service</a></li>
+    <li><a class="dropdown-item" href="#" title="Press Unit">Press Unit</a></li>
+    <li><a class="dropdown-item" href="#" title="Internal Audit">Internal Audit</a></li>
+  </ul>
+</li>
+    </ul>
+</li>
                     <li class="nav-item"><a class="nav-link" href="#" title="Access resources">Resources</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" title="Stay updated with news and events">News & Events</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" title="Get in touch with us">Contact Us</a></li>
@@ -206,6 +291,15 @@
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <h1 class="fw-bold">Welcome to Federal Ministry of Women Affairs</h1>
+            <p class="lead">Empowering women, transforming communities</p>
+            <a href="#" class="btn btn-warning">Explore More</a>
+        </div>
+    </section>
 
     <!-- Hero Carousel -->
     <section class="hero-section">
@@ -238,7 +332,7 @@
     </section>
 
     <!-- News & Updates -->
-    <section class="py-5">
+    <section class="news-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -306,60 +400,33 @@
         </div>
     </section>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1 class="fw-bold mb-3">Welcome to Federal Ministry of Women Affairs</h1>
-            <p class="lead mb-5">Empowering women, transforming communities</p>
-            <a href="#" class="btn btn-warning btn-lg">Explore More</a>
-        </div>
-    </section>
-
-    <!-- Honorable Minister Section -->
+    <!-- Leadership Section -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="row align-items-center">
-    <div class="col-md-4 p-0">
-        <div class="square-image-container text-start left-align-section">
-    <img src="images/imaan_sulaiman.jpg" class="img-fluid mb-2 minister-image" alt="Hajiya Imaan Sulaiman-Ibrahim">
-    <h5 class="mb-1">Hajiya Imaan Sulaiman-Ibrahim</h5>
-    <p class="text-muted minister-title">Honorable Minister</p>
-    <small class="text-muted">images/imaan_sulaiman.jpg</small>
-</div>
-</div>
-    </div>
-    <div class="col-md-8">
-        <p class="lead left-align-section">The Honorable Minister leads the Federal Ministry of Women Affairs, driving initiatives to promote gender equality, empower women, and safeguard the rights of women and children in Nigeria. With extensive public service experience, she is dedicated to advancing policies and programs that enhance women's welfare and development across all sectors of national life.</p>
-    </div>
-</div>
-                    </div>
+            <h2 class="section-title text-center">Leadership</h2>
+            
+            <!-- Minister -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="images/imaan_sulaiman.jpg" class="img-fluid rounded-circle mb-2" alt="Hajiya Imaan Sulaiman-Ibrahim" style="max-width: 250px; height: 250px; object-fit: cover;">
+                    <p class="text-muted mb-1">Honorable Minister</p>
+                    <h4 class="mb-0">Hajiya Imaan Sulaiman-Ibrahim</h4>
+                </div>
+                <div class="col-md-8">
+                    <p class="lead">The Honorable Minister leads the Federal Ministry of Women Affairs, driving initiatives to promote gender equality, empower women, and safeguard the rights of women and children in Nigeria. With extensive public service experience, she is dedicated to advancing policies and programs that enhance women's welfare and development across all sectors of national life.</p>
                 </div>
             </div>
             
-        </div>
-    </section>
-
-    <!-- Permanent Secretary Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="row align-items-center">
-                    <div class="col-md-4 p-0">
-                        <div class="square-image-container text-start left-align-section">
-                            <a href="page-permanent_secretary">
-                                <img src="images/2025_07_11_16_37_IMG_2803.JPG" class="img-fluid mb-3 permanent-secretary-image" title="Dr. Maryam Ismaila Keshinro" alt="Dr. Maryam Ismaila Keshinro">
-                            </a>
-                            <a href="page-permanent_secretary" class="text-decoration-none text-dark">
-                                <h5 class="mb-1">Dr. Maryam Ismaila Keshinro</h5>
-                                <p class="text-muted">Permanent Secretary</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <p class="lead left-align-section">Dr. Maryam Ismaila Keshinro serves as the Permanent Secretary of the Federal Ministry of Women Affairs, bringing extensive experience in public administration and policy implementation. She works closely with the Honorable Minister to ensure the effective execution of policies and programs that advance gender equality, women's empowerment, and the protection of women's and children's rights across Nigeria.</p>
-                    </div>
-                
+            <!-- Permanent Secretary -->
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="images/maryam_keshinro.jpg" class="img-fluid rounded-circle mb-2" alt="Dr. Maryam Ismaila Keshinro" style="max-width: 200px; height: 200px; object-fit: cover;">
+                    <p class="text-muted mb-1">Permanent Secretary</p>
+                    <h4 class="mb-0">Dr. Maryam Ismaila Keshinro</h4>
+                </div>
+                <div class="col-md-8">
+                    <p class="lead">Dr. Maryam Ismaila Keshinro serves as the Permanent Secretary of the Federal Ministry of Women Affairs, bringing extensive experience in public administration and policy implementation. She works closely with the Honorable Minister to ensure the effective execution of policies and programs that advance gender equality, women's empowerment, and the protection of women's and children's rights across Nigeria.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -434,7 +501,7 @@
     </section>
 
     <!-- News & Updates -->
-    <section class="py-5">
+    <section class="news-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -503,27 +570,27 @@
     </section>
 
     <!-- Downloads Section -->
-    <section class="py-5 bg-light">
+    <section class="py-3 bg-light">
         <div class="container">
-            <h2 class="section-title">Publications & Downloads</h2>
+            <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Publications & Downloads</h2>
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
-                            <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
-                            <h5>Public Service Rules</h5>
-                            <p class="text-muted small">Updated: June 2025</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Download PDF</a>
+                            <i class="fas fa-file-pdf fa-2x text-danger mb-2"></i>
+                            <h5 style="font-size: 1rem;">Public Service Rules</h5>
+                            <p class="text-muted small mb-2" style="font-size: 0.75rem;">Updated: June 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm py-0" style="font-size: 0.75rem;">Download PDF</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
-                            <i class="fas fa-file-word fa-3x text-primary mb-3"></i>
-                            <h5>Annual Report 2024</h5>
-                            <p class="text-muted small">Published: January 2025</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Download DOC</a>
+                            <i class="fas fa-file-word fa-2x text-primary mb-2"></i>
+                            <h5 style="font-size: 1rem;">Annual Report 2024</h5>
+                            <p class="text-muted small mb-2" style="font-size: 0.75rem;">Published: January 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm py-0" style="font-size: 0.75rem;">Download DOC</a>
                         </div>
                     </div>
                 </div>
@@ -591,6 +658,7 @@
                             <a href="#" class="me-2" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="me-2" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="#" class="me-2" title="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="http://www.youtube.com/@fmwangr" target="_blank" class="me-2" title="Watch us on YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -655,5 +723,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
-</body>
+<script src="js/division-submenu.js"></script>
+<script src="js/shrink-dropdown-options.js"></script>
+<script src="js/dropdown-tooltip.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src= js/remove-latest-news.js></script>
 </html>

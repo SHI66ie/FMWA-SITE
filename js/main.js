@@ -1,3 +1,16 @@
+// Delete all elements inside the specific About Us section on DOMContentLoaded
+// This targets only the section that comes after the hero section
+
+document.addEventListener('DOMContentLoaded', function() {
+    var heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        var aboutSection = heroSection.nextElementSibling;
+        if (aboutSection && aboutSection.classList.contains('py-5') && aboutSection.classList.contains('bg-light')) {
+            aboutSection.innerHTML = '';
+        }
+    }
+});
+
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
@@ -17,6 +30,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href') === "#") return; // Ignore dummy links
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {

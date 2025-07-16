@@ -137,20 +137,78 @@ a {
     width: 80%;
 }
 
+.dropdown-menu[aria-labelledby="aboutDropdown"] {
+    min-width: auto !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
 .dropdown-menu {
-    border: none;
+    border: none !important;
+    border-color: transparent !important;
+    background-clip: padding-box !important;
+    background: #014903 !important;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 4px 4px;
     margin-top: 0;
     border-top: 2px solid var(--primary-color);
 }
 
-.dropdown-item {
+.dropdown-menu::before,
+.dropdown-menu::after {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.dropdown-item, .dropdown-menu a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 6px;
+    letter-spacing: 1px;
+    color: #fff !important;
+    background: #014903 !important;
+    transition: all 0.2s;
+}
+
+/* Department dropdown panel and options size reduction */
+.dropdown-menu[aria-labelledby="departmentDropdown"] {
+    min-width: 100px !important;
+    width: 120px !important;
+    padding: 0.25rem 0.5rem !important;
+}
+.dropdown-menu[aria-labelledby="departmentDropdown"] > li:not(.dropdown-submenu) > a.dropdown-item {
+    font-size: 6px !important;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+
+/* Keep DIVISIONS and its submenu at normal size */
+.dropdown-item.division-special, .dropdown-submenu .dropdown-item {
+    font-size: 12px !important;
+}
+
     padding: 0.5rem 1.5rem;
     font-weight: 400;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover, .dropdown-menu a:hover {
+    background-color: #fff !important;
+    color: #0d6efd !important;
+}
+
+/* Keep DIVISIONS custom hover */
+.division-special:hover {
+    background-color: #f9ca24 !important;
+    color: #014903 !important;
+}
     background-color: rgba(13, 110, 253, 0.1);
     color: var(--primary-color);
 }
@@ -189,11 +247,12 @@ a {
 
 
 .fmwa-navbar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 1px;
     color: #fff;
-    font-weight: bold;
-    font-size: 0.98rem;
-    text-transform: uppercase;
-    vertical-align: middle;
+    text-align: left;
     margin-left: 0;
     margin-right: 18px;
     letter-spacing: 0.5px;
@@ -206,7 +265,8 @@ a {
     width: 1px;
     height: 90px;
     background: #fff;
-    margin: 0 20px 0 4px;
+    margin-left: 20px;
+    margin-right: 20px;
     border-radius: 1px;
 }
 
@@ -567,6 +627,70 @@ footer a:hover {
 .rounded {
     border-radius: 8px !important;
 }
+
+/* Add custom styles below this line */
+
+/* Hero carousel logo - shrink size */
+.carousel-item img[alt="FMWA Logo"] {
+    width: 50% !important; /* 50% of its container */
+    height: auto !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.dropdown-menu.show {
+  display: block !important;
+}
+
+#departmentDropdown {
+    font-size: 12px !important;
+}
+
+.division-special:hover {
+    background-color: #f9ca24 !important;
+    color: #014903 !important;
+    text-transform: uppercase;
+}
+
+/* Bootstrap 5 submenu support */
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    right: auto;
+    margin-top: 0;
+    margin-left: 0;
+    min-width: 100px !important;
+    width: 120px !important;
+    padding: 0.25rem 0.5rem !important;
+    display: none;
+    position: absolute;
+    z-index: 2000;
+}
+
+.dropdown-submenu > .dropdown-menu > li > a.dropdown-item {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+.dropdown-submenu.show > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    display: none;
+    position: absolute;
+}
+.dropdown-submenu.show > .dropdown-menu {
+    display: block;
+}
+
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
