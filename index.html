@@ -4,271 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Federal Ministry of Women Affairs</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .fmwa-logo-stretch {
-            margin-left: 15px; /* Add left margin to move logo right */
-            height: 50px; /* Adjusted logo height */
-            width: auto;
-        }
-        .fmwa-navbar-title {
-            display: inline-block;
-            white-space: nowrap;
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-left: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .logo-divider {
-            display: inline-block;
-            height: 30px;
-            width: 1px;
-            background-color: rgba(255,255,255,0.3);
-            margin: 0 10px;
-        }
-        .navbar-tagline {
-            color: white;
-            font-size: 0.9rem;
-            margin: 0 15px;
-            font-style: italic;
-            white-space: nowrap;
-        }
-        .top-bar {
-            background-color: #014903;
-            color: white;
-            padding: 6px 0;
-            font-size: 12px;
-        }
-        .main-nav {
-            background-color: #014903;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .main-nav .navbar-brand img {
-            height: 80px;
-            transition: all 0.3s ease;
-        }
-        .main-nav .nav-link {
-            color: white !important;
-            font-weight: 500;
-            padding: 12px 15px !important;
-            text-transform: uppercase;
-            font-size: 12px;
-        }
-        .main-nav .nav-link:hover {
-            color: #f9ca24 !important;
-        }
-        .welcome-section {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 8px 0;
-            text-align: center;
-            margin: 0;
-            width: 100%;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .welcome-section h1 {
-            font-size: 1.5rem;
-            margin-bottom: 4px !important;
-        }
-        .welcome-section p {
-            font-size: 0.9rem;
-            margin-bottom: 4px !important;
-        }
-        .welcome-section .btn {
-            padding: 2px 12px;
-            font-size: 0.8rem;
-            margin-top: 4px;
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/downloads.css">
+    <link rel="stylesheet" href="css/leadership.css">
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- Initialize Bootstrap dropdowns with submenu support -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize all dropdowns
+        var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+        var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+            return new bootstrap.Dropdown(dropdownToggleEl, {
+                autoClose: 'outside',
+                popperConfig: function(defaultBsPopperConfig) {
+                    return {
+                        ...defaultBsPopperConfig,
+                        strategy: 'fixed'
+                    };
+                }
+            });
+        });
+
+        // Handle submenu hover for desktop
+        if (window.innerWidth >= 992) {
+            // Main dropdown hover
+            document.querySelectorAll('.dropdown, .dropdown-submenu').forEach(function(element) {
+                element.addEventListener('mouseenter', function(e) {
+                    const toggle = this.querySelector('.dropdown-toggle');
+                    if (toggle) {
+                        const dropdown = bootstrap.Dropdown.getInstance(toggle);
+                        if (dropdown) {
+                            // Close any open dropdowns at this level
+                            const parentNav = this.closest('.dropdown-menu');
+                            if (parentNav) {
+                                parentNav.querySelectorAll('.dropdown-menu').forEach(menu => {
+                                    if (menu !== this.querySelector('.dropdown-menu')) {
+                                        const toggleBtn = menu.previousElementSibling;
+                                        if (toggleBtn && toggleBtn.matches('.dropdown-toggle')) {
+                                            const dd = bootstrap.Dropdown.getInstance(toggleBtn);
+                                            if (dd) dd.hide();
+                                        }
+                                    }
+                                });
+                            }
+                            dropdown.show();
+                        }
+                    }
+                });
+
+                element.addEventListener('mouseleave', function(e) {
+                    // Only hide if not hovering over a child dropdown
+                    if (!this.contains(e.relatedTarget) || !e.relatedTarget) {
+                        const toggle = this.querySelector('.dropdown-toggle');
+                        if (toggle) {
+                            const dropdown = bootstrap.Dropdown.getInstance(toggle);
+                            if (dropdown) dropdown.hide();
+                        }
+                    }
+                });
+            });
         }
         
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        .carousel-item {
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-            transition: opacity 1s ease-in-out;
-        }
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .section-title {
-            color: #0c2461;
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #f9ca24;
-        }
-        .feature-box {
-            background: white;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        .feature-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .feature-box i {
-            font-size: 40px;
-            color: #0c2461;
-            margin-bottom: 20px;
-        }
-        .news-item {
-            margin-bottom: 30px;
-        }
-        .news-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-        .news-date {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .news-title {
-            color: #0c2461;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .read-more {
-            color: #0c2461;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .read-more i {
-            margin-left: 5px;
-            transition: all 0.3s ease;
-        }
-        .read-more:hover {
-            color: #f9ca24;
-        }
-        .read-more:hover i {
-            margin-left: 10px;
-        }
-        footer {
-            background-color: #0c2461;
-            color: white;
-            padding: 60px 0 20px;
-        }
-        .footer-widget h4 {
-            color: #f9ca24;
-            font-size: 18px;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        .footer-widget h4:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: #f9ca24;
-        }
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .footer-links a:hover {
-            color: #f9ca24;
-            padding-left: 5px;
-        }
-        .social-links a {
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            line-height: 35px;
-            text-align: center;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        .social-links a:hover {
-            background: #f9ca24;
-            color: #0c2461;
-        }
-        /* Compact News Section */
-        .news-section {
-            padding: 1.5rem 0;
-        }
-        .news-section .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .news-item {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        .news-item img {
-            max-height: 120px;
-            width: 100%;
-            object-fit: cover;
-            margin-bottom: 0.5rem;
-        }
-        .news-date {
-            font-size: 0.75rem;
-            color: #6c757d;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        .news-title {
-            font-size: 1rem;
-            margin: 0.25rem 0;
-        }
-        .news-item p {
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-        .read-more {
-            font-size: 0.8rem;
-        }
-        .read-more i {
-            font-size: 0.7rem;
-        }
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            margin-top: 30px;
-            text-align: center;
-            color: #aaa;
-            font-size: 14px;
-        }
+        // Handle touch events for mobile
+        document.addEventListener('click', function(e) {
+            const target = e.target;
+            if (window.innerWidth < 992) {
+                // Handle dropdown toggle on mobile
+                if (target.matches('.dropdown-toggle')) {
+                    e.preventDefault();
+                    const dropdown = bootstrap.Dropdown.getInstance(target);
+                    if (dropdown) {
+                        dropdown.toggle();
+                    }
+                }
+            }
+        });
+    });
+    </script>
+
     </style>
 </head>
 <body>
@@ -288,42 +115,44 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#" title="Go to home page">Home</a></li>
                     <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" title="Learn about the ministry" aria-expanded="false">
-        About Us
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-        <li><a class="dropdown-item" href="#" title="View our mandate">Mandate</a></li>
-        <li><a class="dropdown-item" href="#" title="Read our mission">Mission</a></li>
-        <li><a class="dropdown-item" href="#" title="View our ordanogram">Ordanogram</a></li>
-        <li><a class="dropdown-item" href="#" title="Learn about our vision">Vision</a></li>
-    </ul>
-</li>
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" title="Learn about the ministry" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="#" title="View our mandate">Mandate</a></li>
+                            <li><a class="dropdown-item" href="#" title="Read our mission">Mission</a></li>
+                            <li><a class="dropdown-item" href="#" title="View our ordanogram">Ordanogram</a></li>
+                            <li><a class="dropdown-item" href="#" title="Learn about our vision">Vision</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="departmentDropdown" role="button" data-bs-toggle="dropdown" title="View our departments" aria-expanded="false">
-        Department
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="departmentDropdown">
-        <li><a class="dropdown-item" href="#" title="Child Development">Child Development</a></li>
-        <li><a class="dropdown-item" href="#" title="Community Development & Social Intervention">Community Development & Social Intervention</a></li>
-                <li><a class="dropdown-item" href="#" title="Finance & Account">Finance & Account</a></li>
-        <li><a class="dropdown-item" href="#" title="Gender Affairs">Gender Affairs</a></li>
-        <li><a class="dropdown-item" href="#" title="General Services">General Services</a></li>
-        <li><a class="dropdown-item" href="#" title="Nutrition">Nutrition</a></li>
-        <li><a class="dropdown-item" href="#" title="Planning Research & Statistics">Planning Research & Statistics</a></li>
-        <li><a class="dropdown-item" href="#" title="Procurement">Procurement</a></li>
-        <li><a class="dropdown-item" href="#" title="Reform Coordination & Services Improvement">Reform Coordination & Services Improvement</a></li>
-        <li><a class="dropdown-item" href="#" title="Women Development">Women Development</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-submenu position-relative">
-  <a class="dropdown-item dropdown-toggle division-special" href="#" id="divisionsDropdown" role="button" aria-expanded="false" title="Divisions">DIVISIONS</a>
-  <ul class="dropdown-menu" aria-labelledby="divisionsDropdown">
-    <li><a class="dropdown-item" href="#" title="Legal Service">Legal Service</a></li>
-    <li><a class="dropdown-item" href="#" title="Press Unit">Press Unit</a></li>
-    <li><a class="dropdown-item" href="#" title="Internal Audit">Internal Audit</a></li>
-  </ul>
-</li>
-    </ul>
-</li>
+                        <a class="nav-link dropdown-toggle" href="#" id="departmentDropdown" role="button" data-bs-toggle="dropdown" title="View our departments" aria-expanded="false">
+                            Department
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="departmentDropdown">
+                            <li><a class="dropdown-item" href="#" title="Child Development">Child Development</a></li>
+                            <li><a class="dropdown-item" href="#" title="Community Development & Social Intervention">Community Development & Social Intervention</a></li>
+                            <li><a class="dropdown-item" href="#" title="Finance & Account">Finance & Account</a></li>
+                            <li><a class="dropdown-item" href="#" title="Gender Affairs">Gender Affairs</a></li>
+                            <li><a class="dropdown-item" href="#" title="General Services">General Services</a></li>
+                            <li><a class="dropdown-item" href="#" title="Nutrition">Nutrition</a></li>
+                            <li><a class="dropdown-item" href="#" title="Planning Research & Statistics">Planning Research & Statistics</a></li>
+                            <li><a class="dropdown-item" href="#" title="Procurement">Procurement</a></li>
+                            <li><a class="dropdown-item" href="#" title="Reform Coordination & Services Improvement">Reform Coordination & Services Improvement</a></li>
+                            <li><a class="dropdown-item" href="#" title="Women Development">Women Development</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li class="dropdown-submenu dropdown">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="divisionsDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" title="Divisions">
+                                    DIVISIONS
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="divisionsDropdown">
+                                    <li><a class="dropdown-item" href="#" title="Legal Service">Legal Service</a></li>
+                                    <li><a class="dropdown-item" href="#" title="Press Unit">Press Unit</a></li>
+                                    <li><a class="dropdown-item" href="#" title="Internal Audit">Internal Audit</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#" title="Access resources">Resources</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" title="Stay updated with news and events">News & Events</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" title="Get in touch with us">Contact Us</a></li>
@@ -343,27 +172,24 @@
 
     <!-- Hero Carousel -->
     <section class="hero-section">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
-            <div class="carousel-inner">
+        <div id="heroCarousel" class="carousel slide">
+            <div class="carousel-inner" aria-live="polite">
                 <div class="carousel-item active">
-                    <img src="images/2025_07_11_16_37_IMG_2804.JPG" class="d-block w-100" alt="FMWA Event">
-                    <div class="carousel-caption">
-                        <h2>Welcome to FMWA</h2>
-                        <p>Empowering Women, Building a Better Future</p>
+                    <div class="image-container">
+                        <img src="images/2025_07_11_16_37_IMG_2804.JPG" alt="FMWA Event">
+                        <img src="images/2025_07_11_16_39_IMG_2805.JPG" alt="FMWA Event">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/2025_07_11_16_39_IMG_2805.JPG" class="d-block w-100" alt="FMWA Event">
-                    <div class="carousel-caption">
-                        <h2>Our Mission</h2>
-                        <p>Advancing Gender Equality and Women's Rights</p>
+                    <div class="image-container">
+                        <img src="images/2025_07_11_16_40_IMG_2806.JPG" alt="FMWA Event">
+                        <img src="images/2025_07_11_16_37_IMG_2804.JPG" alt="FMWA Event">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/2025_07_11_16_40_IMG_2806.JPG" class="d-block w-100" alt="FMWA Event">
-                    <div class="carousel-caption">
-                        <h2>Our Vision</h2>
-                        <p>Creating Opportunities for Women's Advancement</p>
+                    <div class="image-container">
+                        <img src="images/2025_07_11_16_39_IMG_2805.JPG" alt="FMWA Event">
+                        <img src="images/2025_07_11_16_40_IMG_2806.JPG" alt="FMWA Event">
                     </div>
                 </div>
             </div>
@@ -379,28 +205,28 @@
     </section>
 
     <!-- Leadership Section -->
-    <section class="py-5 bg-light">
+    <section class="leadership-section py-5">
         <div class="container">
-            <h2 class="section-title text-center">Leadership</h2>
+            <h2 class="section-title">Leadership</h2>
             
             <!-- Minister -->
-            <div class="row align-items-center mb-5">
+            <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="images/imaan_sulaiman.jpg" class="img-fluid rounded-circle mb-2" alt="Hajiya Imaan Sulaiman-Ibrahim" style="max-width: 250px; height: 250px; object-fit: cover;">
-                    <p class="text-muted mb-1">Honorable Minister</p>
-                    <h4 class="mb-0">Hajiya Imaan Sulaiman-Ibrahim</h4>
+                    <img src="images/imaan_sulaiman.jpg" class="img-fluid rounded-circle" alt="Hajiya Imaan Sulaiman-Ibrahim" loading="lazy">
+                    <p class="text-muted">Honorable Minister</p>
+                    <h4>Hajiya Imaan Sulaiman-Ibrahim</h4>
                 </div>
                 <div class="col-md-8">
-                    <p class="lead">The Honorable Minister leads the Federal Ministry of Women Affairs, driving initiatives to promote gender equality, empower women, and safeguard the rights of women and children in Nigeria. With extensive public service experience, she is dedicated to advancing policies and programs that enhance women's welfare and development across all sectors of national life.</p>
+                    <p class="lead">Hajiya Imaan Sulaiman-Ibrahim is the Honorable Minister of Women Affairs, appointed to oversee the affairs of the Federal Ministry of Women Affairs. With a strong background in public service and a passion for women's empowerment, she is committed to advancing gender equality, protecting women's rights, and implementing policies that promote the welfare of women and children across Nigeria.</p>
                 </div>
             </div>
             
             <!-- Permanent Secretary -->
-            <div class="row align-items-center">
+            <div class="row align-items-center permanent-secretary">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="images/2025_07_11_16_37_IMG_2803.JPG" class="img-fluid rounded-circle mb-2" alt="Dr. Maryam Ismaila Keshinro" style="max-width: 200px; height: 200px; object-fit: cover;" loading="lazy">
-                    <p class="text-muted mb-1">Permanent Secretary</p>
-                    <h4 class="mb-0">Dr. Maryam Ismaila Keshinro</h4>
+                    <img src="images/2025_07_11_16_37_IMG_2803.JPG" class="img-fluid rounded-circle" alt="Dr. Maryam Ismaila Keshinro" loading="lazy">
+                    <p class="text-muted">Permanent Secretary</p>
+                    <h4>Dr. Maryam Ismaila Keshinro</h4>
                 </div>
                 <div class="col-md-8">
                     <p class="lead">Dr. Maryam Ismaila Keshinro serves as the Permanent Secretary of the Federal Ministry of Women Affairs, bringing extensive experience in public administration and policy implementation. She works closely with the Honorable Minister to ensure the effective execution of policies and programs that advance gender equality, women's empowerment, and the protection of women's and children's rights across Nigeria.</p>
@@ -617,27 +443,27 @@
     </section>
 
     <!-- Downloads Section -->
-    <section class="py-3 bg-light">
+    <section class="downloads-section py-3 bg-light">
         <div class="container">
-            <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Publications & Downloads</h2>
+            <h2 class="section-title">Publications & Downloads</h2>
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
-                            <i class="fas fa-file-pdf fa-2x text-danger mb-2"></i>
-                            <h5 style="font-size: 1rem;">Public Service Rules</h5>
-                            <p class="text-muted small mb-2" style="font-size: 0.75rem;">Updated: June 2025</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm py-0" style="font-size: 0.75rem;">Download PDF</a>
+                            <i class="fas fa-file-pdf fa-2x mb-2"></i>
+                            <h5>Public Service Rules</h5>
+                            <p class="text-muted small mb-2">Updated: June 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download PDF</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
-                            <i class="fas fa-file-word fa-2x text-primary mb-2"></i>
-                            <h5 style="font-size: 1rem;">Annual Report 2024</h5>
-                            <p class="text-muted small mb-2" style="font-size: 0.75rem;">Published: January 2025</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm py-0" style="font-size: 0.75rem;">Download DOC</a>
+                            <i class="fas fa-file-word fa-2x mb-2"></i>
+                            <h5>Annual Report 2024</h5>
+                            <p class="text-muted small mb-2">Published: January 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download DOC</a>
                         </div>
                     </div>
                 </div>
@@ -768,18 +594,264 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Initialize carousel with options
+    <script>
+    // Initialize carousel with enhanced transitions and performance
     document.addEventListener('DOMContentLoaded', function() {
-        var myCarousel = document.querySelector('#heroCarousel');
-        var carousel = new bootstrap.Carousel(myCarousel, {
-            interval: 10000, // 10 seconds
-            touch: true,
-            wrap: true
+        const myCarousel = document.querySelector('#heroCarousel');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let isAnimating = false;
+        let autoTransitionTimer;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const TRANSITION_DURATION = 800; // Match this with CSS transition duration
+        const AUTO_TRANSITION_DELAY = 8000; // 8 seconds between auto-transitions
+        const SWIPE_THRESHOLD = 50; // Minimum swipe distance in pixels
+
+        // Ensure first slide is visible on load
+        if (carouselItems.length > 0) {
+            carouselItems[0].classList.add('active');
+            carouselItems[0].style.opacity = '1';
+        }
+
+        // Initialize carousel with custom settings
+        const carousel = new bootstrap.Carousel(myCarousel, {
+            interval: false, // We'll handle auto-transition manually
+            touch: true,    // Enable touch swiping
+            wrap: true,     // Enable continuous loop
+            keyboard: true  // Enable keyboard navigation
         });
+
+        // Function to reset the auto-transition timer
+        function resetAutoTransitionTimer() {
+            clearTimeout(autoTransitionTimer);
+            autoTransitionTimer = setTimeout(() => {
+                if (!isAnimating && document.visibilityState === 'visible') {
+                    slideTo('next');
+                }
+            }, AUTO_TRANSITION_DELAY);
+        }
+        
+        // Main slide transition function
+        function slideTo(direction) {
+            if (isAnimating) return;
+            
+            isAnimating = true;
+            const activeItem = document.querySelector('.carousel-item.active');
+            if (!activeItem) return;
+            
+            const activeIndex = Array.from(carouselItems).indexOf(activeItem);
+            const nextIndex = direction === 'prev' 
+                ? (activeIndex - 1 + carouselItems.length) % carouselItems.length
+                : (activeIndex + 1) % carouselItems.length;
+            
+            const nextItem = carouselItems[nextIndex];
+            if (!nextItem) return;
+            
+            // Set up initial states
+            nextItem.style.display = 'flex';
+            nextItem.style.opacity = '0';
+            nextItem.style.zIndex = '2';
+            activeItem.style.zIndex = '1';
+            
+            // Force reflow to ensure initial styles are applied
+            nextItem.offsetHeight;
+            
+            // Start transition
+            nextItem.classList.add('active');
+            nextItem.style.opacity = '1';
+            
+            // Animate
+            requestAnimationFrame(() => {
+                activeItem.style.opacity = '0';
+                
+                // Clean up after transition
+                setTimeout(() => {
+                    activeItem.classList.remove('active');
+                    activeItem.style.opacity = '';
+                    nextItem.style.zIndex = '';
+                    activeItem.style.zIndex = '';
+                    isAnimating = false;
+                    
+                    // Update indicators if present
+                    updateIndicators(nextIndex);
+                    
+                    // Reset auto-transition timer
+                    resetAutoTransitionTimer();
+                }, TRANSITION_DURATION);
+            });
+        }
+        
+        // Update carousel indicators
+        function updateIndicators(activeIndex) {
+            const indicators = document.querySelectorAll('.carousel-indicators button');
+            indicators.forEach((indicator, index) => {
+                if (index === activeIndex) {
+                    indicator.classList.add('active');
+                    indicator.setAttribute('aria-current', 'true');
+                } else {
+                    indicator.classList.remove('active');
+                    indicator.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        // Function to handle navigation
+        function handleNavigation(direction) {
+            if (isAnimating) return;
+            slideTo(direction);
+            resetAutoTransitionTimer();
+        }
+
+        // Navigation controls
+        const prevButton = myCarousel.querySelector('.carousel-control-prev');
+        const nextButton = myCarousel.querySelector('.carousel-control-next');
+        
+        // Handle previous button
+        if (prevButton) {
+            prevButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleNavigation('prev');
+            });
+            
+            // Also handle the inner icon click
+            const prevIcon = prevButton.querySelector('.carousel-control-prev-icon');
+            if (prevIcon) {
+                prevIcon.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    handleNavigation('prev');
+                });
+            }
+        }
+        
+        // Handle next button
+        if (nextButton) {
+            nextButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleNavigation('next');
+            });
+            
+            // Also handle the inner icon click
+            const nextIcon = nextButton.querySelector('.carousel-control-next-icon');
+            if (nextIcon) {
+                nextIcon.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    handleNavigation('next');
+                });
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.activeElement.tagName === 'BODY') {
+                if (e.key === 'ArrowLeft') slideTo('prev');
+                else if (e.key === 'ArrowRight') slideTo('next');
+            }
+        });
+
+        // Touch events for mobile
+        myCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        myCarousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - SWIPE_THRESHOLD) {
+                slideTo('next');
+            } else if (touchEndX > touchStartX + SWIPE_THRESHOLD) {
+                slideTo('prev');
+            }
+        }
+
+        // Pause auto-transition on interaction
+        const pauseAutoTransition = () => clearTimeout(autoTransitionTimer);
+        const resumeAutoTransition = () => resetAutoTransitionTimer();
+        
+        myCarousel.addEventListener('mouseenter', pauseAutoTransition);
+        myCarousel.addEventListener('mouseleave', resumeAutoTransition);
+        myCarousel.addEventListener('touchstart', pauseAutoTransition, { passive: true });
+        myCarousel.addEventListener('touchend', resumeAutoTransition, { passive: true });
+        
+        // Handle visibility changes
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                resumeAutoTransition();
+            } else {
+                pauseAutoTransition();
+            }
+        });
+
+        // Initialize
+        resetAutoTransitionTimer();
+        
+        // Clean up event listeners when component unmounts
+        return () => {
+            clearTimeout(autoTransitionTimer);
+            myCarousel.removeEventListener('mouseenter', pauseAutoTransition);
+            myCarousel.removeEventListener('mouseleave', resumeAutoTransition);
+            myCarousel.removeEventListener('touchstart', pauseAutoTransition);
+            myCarousel.removeEventListener('touchend', resumeAutoTransition);
+            document.removeEventListener('visibilitychange', resumeAutoTransition);
+        };
     });
-</script>
+    </script>
+    <script src="js/division-submenu.js"></script>
+    <script src="js/shrink-dropdown-options.js"></script>
+    <script src="js/dropdown-tooltip.js"></script>
+    <script src="js/remove-latest-news.js"></script>
+    /* Ensure consistent transition timing */
+    .carousel-item {
+        transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+    }
+    
+    /* Fix for smooth sliding */
+    .carousel-inner {
+        overflow: visible;
+    }
+    
+    /* Ensure proper image display */
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Navigation button styling */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+    }
+    
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        opacity: 1;
+    }
+    
+    /* Ensure proper display of carousel items */
+    .carousel-item.active,
+    .carousel-item-next,
+    .carousel-item-prev {
+        display: flex;
+    }
+    
+    /* Fix for image container */
+    .image-container {
+        display: flex;
+        width: 100%;
+    }
+    
+    .image-container img {
+        flex: 1;
+        object-fit: cover;
+        height: 500px; /* Adjust height as needed */
+    }
+</style>
 <script src="js/division-submenu.js"></script>
 <script src="js/shrink-dropdown-options.js"></script>
 <script src="js/dropdown-tooltip.js"></script>
