@@ -1,15 +1,5 @@
-// Delete all elements inside the specific About Us section on DOMContentLoaded
-// This targets only the section that comes after the hero section
-
-document.addEventListener('DOMContentLoaded', function() {
-    var heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        var aboutSection = heroSection.nextElementSibling;
-        if (aboutSection && aboutSection.classList.contains('py-5') && aboutSection.classList.contains('bg-light')) {
-            aboutSection.innerHTML = '';
-        }
-    }
-});
+// This script is no longer needed as we want to keep all sections visible
+// The content is now properly managed in the HTML
 
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
