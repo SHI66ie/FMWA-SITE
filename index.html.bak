@@ -9,34 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        .fmwa-logo-stretch {
-            margin-left: 15px; /* Add left margin to move logo right */
-            height: 50px; /* Adjusted logo height */
-            width: auto;
-        }
-        .fmwa-navbar-title {
-            display: inline-block;
-            white-space: nowrap;
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-left: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .logo-divider {
-            display: inline-block;
-            height: 30px;
-            width: 1px;
-            background-color: rgba(255,255,255,0.3);
-            margin: 0 10px;
-        }
-        .navbar-tagline {
-            color: white;
-            font-size: 0.9rem;
-            margin: 0 15px;
-            font-style: italic;
-            white-space: nowrap;
-        }
         .top-bar {
             background-color: #014903;
             color: white;
@@ -61,29 +33,6 @@
         .main-nav .nav-link:hover {
             color: #f9ca24 !important;
         }
-        .welcome-section {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 8px 0;
-            text-align: center;
-            margin: 0;
-            width: 100%;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .welcome-section h1 {
-            font-size: 1.5rem;
-            margin-bottom: 4px !important;
-        }
-        .welcome-section p {
-            font-size: 0.9rem;
-            margin-bottom: 4px !important;
-        }
-        .welcome-section .btn {
-            padding: 2px 12px;
-            font-size: 0.8rem;
-            margin-top: 4px;
-        }
-        
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg');
             background-size: cover;
@@ -212,44 +161,6 @@
             background: #f9ca24;
             color: #0c2461;
         }
-        /* Compact News Section */
-        .news-section {
-            padding: 1.5rem 0;
-        }
-        .news-section .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .news-item {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        .news-item img {
-            max-height: 120px;
-            width: 100%;
-            object-fit: cover;
-            margin-bottom: 0.5rem;
-        }
-        .news-date {
-            font-size: 0.75rem;
-            color: #6c757d;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        .news-title {
-            font-size: 1rem;
-            margin: 0.25rem 0;
-        }
-        .news-item p {
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-        .read-more {
-            font-size: 0.8rem;
-        }
-        .read-more i {
-            font-size: 0.7rem;
-        }
         .copyright {
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
@@ -268,7 +179,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark main-nav px-0">
         <div class="container-fluid gx-0">
             <a class="navbar-brand d-flex align-items-center me-0" href="#">
-    <img src="images/2025_07_14_13_42_IMG_2808.PNG" alt="Federal Ministry of Women Affairs Logo" class="fmwa-logo-stretch"><span class="logo-divider"></span><span class="fmwa-navbar-title">FEDERAL MINISTRY OF WOMEN AFFAIRS</span>
+    <img src="images/2025_07_14_13_42_IMG_2808.PNG" alt="Federal Ministry of Women Affairs Logo" class="fmwa-logo-stretch"><span class="logo-divider"></span><span class="fmwa-navbar-title">FEDERAL<br>MINISTRY OF<br>WOMEN AFFAIRS</span>
 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
@@ -321,15 +232,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="welcome-section">
-        <div class="container">
-            <h1 class="fw-bold">Welcome to Federal Ministry of Women Affairs</h1>
-            <p class="lead">Empowering women, transforming communities</p>
-            <a href="#" class="btn btn-success">Explore More</a>
-        </div>
-    </section>
-
     <!-- Hero Carousel -->
     <section class="hero-section">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -361,7 +263,7 @@
     </section>
 
     <!-- News & Updates -->
-    <section class="news-section">
+    <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -429,89 +331,60 @@
         </div>
     </section>
 
-    <!-- News & Updates -->
-    <section class="py-5">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Latest News & Updates</h2>
-            <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="images/news1.jpg" class="card-img-top" alt="News 1">
-                        <div class="card-body">
-                            <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> July 10, 2025</span>
-                            <h5 class="card-title mt-2">Government Approves New Public Service Reform Initiative</h5>
-                            <p class="card-text small">The government has approved a comprehensive reform package aimed at enhancing efficiency in the public service.</p>
-                            <a href="#" class="btn btn-link p-0 text-decoration-none">Read More <i class="fas fa-arrow-right small"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="images/news2.jpg" class="card-img-top" alt="News 2">
-                        <div class="card-body">
-                            <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> July 5, 2025</span>
-                            <h5 class="card-title mt-2">Government Launches Digital Transformation Program</h5>
-                            <p class="card-text small">The government has commenced the implementation of a digital transformation program to modernize public service operations.</p>
-                            <a href="#" class="btn btn-link p-0 text-decoration-none">Read More <i class="fas fa-arrow-right small"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="images/news3.jpg" class="card-img-top" alt="News 3">
-                        <div class="card-body">
-                            <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> June 28, 2025</span>
-                            <h5 class="card-title mt-2">Public Servants to Undergo Capacity Building</h5>
-                            <p class="card-text small">A new capacity building initiative has been introduced to enhance the skills of public servants across all levels.</p>
-                            <a href="#" class="btn btn-link p-0 text-decoration-none">Read More <i class="fas fa-arrow-right small"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="images/news4.jpg" class="card-img-top" alt="News 4">
-                        <div class="card-body">
-                            <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i> June 15, 2025</span>
-                            <h5 class="card-title mt-2">Government Partners with Private Sector on Training</h5>
-                            <p class="card-text small">New partnership announced to provide specialized training for public servants in collaboration with leading private sector organizations.</p>
-                            <a href="#" class="btn btn-link p-0 text-decoration-none">Read More <i class="fas fa-arrow-right small"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary">View All News & Updates</a>
-            </div>
+            <h1 class="fw-bold mb-3">Welcome to Federal Ministry of Women Affairs</h1>
+            <p class="lead mb-5">Empowering women, transforming communities</p>
+            <a href="#" class="btn btn-warning btn-lg">Explore More</a>
         </div>
     </section>
 
-    <!-- Leadership Section -->
+    <!-- Honorable Minister Section -->
     <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title text-center">Leadership</h2>
-            
-            <!-- Minister -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="images/imaan_sulaiman.jpg" class="img-fluid rounded-circle mb-2" alt="Hajiya Imaan Sulaiman-Ibrahim" style="max-width: 250px; height: 250px; object-fit: cover;">
-                    <p class="text-muted mb-1">Honorable Minister</p>
-                    <h4 class="mb-0">Hajiya Imaan Sulaiman-Ibrahim</h4>
-                </div>
-                <div class="col-md-8">
-                    <p class="lead">The Honorable Minister leads the Federal Ministry of Women Affairs, driving initiatives to promote gender equality, empower women, and safeguard the rights of women and children in Nigeria. With extensive public service experience, she is dedicated to advancing policies and programs that enhance women's welfare and development across all sectors of national life.</p>
+            <div class="row justify-content-center">
+                <div class="row align-items-center">
+    <div class="col-md-4 p-0">
+        <div class="square-image-container text-start left-align-section">
+    <img src="images/imaan_sulaiman.jpg" class="img-fluid mb-2 minister-image" alt="Hajiya Imaan Sulaiman-Ibrahim">
+    <h5 class="mb-1">Hajiya Imaan Sulaiman-Ibrahim</h5>
+    <p class="text-muted minister-title">Honorable Minister</p>
+    <small class="text-muted">images/imaan_sulaiman.jpg</small>
+</div>
+</div>
+    </div>
+    <div class="col-md-8">
+        <p class="lead left-align-section">The Honorable Minister leads the Federal Ministry of Women Affairs, driving initiatives to promote gender equality, empower women, and safeguard the rights of women and children in Nigeria. With extensive public service experience, she is dedicated to advancing policies and programs that enhance women's welfare and development across all sectors of national life.</p>
+    </div>
+</div>
+                    </div>
                 </div>
             </div>
             
-            <!-- Permanent Secretary -->
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="images/maryam_keshinro.jpg" class="img-fluid rounded-circle mb-2" alt="Dr. Maryam Ismaila Keshinro" style="max-width: 200px; height: 200px; object-fit: cover;">
-                    <p class="text-muted mb-1">Permanent Secretary</p>
-                    <h4 class="mb-0">Dr. Maryam Ismaila Keshinro</h4>
-                </div>
-                <div class="col-md-8">
-                    <p class="lead">Dr. Maryam Ismaila Keshinro serves as the Permanent Secretary of the Federal Ministry of Women Affairs, bringing extensive experience in public administration and policy implementation. She works closely with the Honorable Minister to ensure the effective execution of policies and programs that advance gender equality, women's empowerment, and the protection of women's and children's rights across Nigeria.</p>
-                </div>
+        </div>
+    </section>
+
+    <!-- Permanent Secretary Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="row align-items-center">
+                    <div class="col-md-4 p-0">
+                        <div class="square-image-container text-start left-align-section">
+                            <a href="page-permanent_secretary">
+                                <img src="images/2025_07_11_16_37_IMG_2803.JPG" class="img-fluid mb-3 permanent-secretary-image" title="Dr. Maryam Ismaila Keshinro" alt="Dr. Maryam Ismaila Keshinro">
+                            </a>
+                            <a href="page-permanent_secretary" class="text-decoration-none text-dark">
+                                <h5 class="mb-1">Dr. Maryam Ismaila Keshinro</h5>
+                                <p class="text-muted">Permanent Secretary</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="lead left-align-section">Dr. Maryam Ismaila Keshinro serves as the Permanent Secretary of the Federal Ministry of Women Affairs, bringing extensive experience in public administration and policy implementation. She works closely with the Honorable Minister to ensure the effective execution of policies and programs that advance gender equality, women's empowerment, and the protection of women's and children's rights across Nigeria.</p>
+                    </div>
+                
             </div>
         </div>
     </section>
@@ -586,7 +459,7 @@
     </section>
 
     <!-- News & Updates -->
-    <section class="news-section">
+    <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -655,27 +528,27 @@
     </section>
 
     <!-- Downloads Section -->
-    <section class="py-3 bg-light">
+    <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Publications & Downloads</h2>
+            <h2 class="section-title">Publications & Downloads</h2>
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
-                            <i class="fas fa-file-pdf fa-2x text-danger mb-2"></i>
-                            <h5 style="font-size: 1rem;">Public Service Rules</h5>
-                            <p class="text-muted small mb-2" style="font-size: 0.75rem;">Updated: June 2025</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm py-0" style="font-size: 0.75rem;">Download PDF</a>
+                            <i class="fas fa-file-pdf fa-3x text-danger mb-3"></i>
+                            <h5>Public Service Rules</h5>
+                            <p class="text-muted small">Updated: June 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download PDF</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
-                            <i class="fas fa-file-word fa-2x text-primary mb-2"></i>
-                            <h5 style="font-size: 1rem;">Annual Report 2024</h5>
-                            <p class="text-muted small mb-2" style="font-size: 0.75rem;">Published: January 2025</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm py-0" style="font-size: 0.75rem;">Download DOC</a>
+                            <i class="fas fa-file-word fa-3x text-primary mb-3"></i>
+                            <h5>Annual Report 2024</h5>
+                            <p class="text-muted small">Published: January 2025</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download DOC</a>
                         </div>
                     </div>
                 </div>
@@ -743,7 +616,6 @@
                             <a href="#" class="me-2" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
                             <a href="#" class="me-2" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="#" class="me-2" title="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="http://www.youtube.com/@fmwangr" target="_blank" class="me-2" title="Watch us on YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -812,5 +684,5 @@
 <script src="js/shrink-dropdown-options.js"></script>
 <script src="js/dropdown-tooltip.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src= js/remove-latest-news.js></script>
+</body>
 </html>
