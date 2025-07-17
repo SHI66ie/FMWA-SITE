@@ -1,6 +1,6 @@
-# Office of the Head of the Civil Service of the Federation (OHCSF) Website
+# Federal Ministry of Women Affairs website
 
-A modern, responsive website for the Office of the Head of the Civil Service of the Federation, inspired by the Federal Ministry of Women Affairs' design.
+ Federal Ministry of Women Affairs up to date website following the Nigerian Government Guidlines.
 
 ## Features
 

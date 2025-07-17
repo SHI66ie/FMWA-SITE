@@ -192,14 +192,13 @@ a {
 }
 
 .dropdown-menu {
-    border: none !important;
-    border-color: transparent !important;
-    background-clip: padding-box !important;
-    background: #014903 !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 4px 4px;
-    margin-top: 0;
-    border-top: 2px solid var(--primary-color);
+    background-color: #014903;
+    border: none;
+    border-radius: 4px;
+    margin-top: 8px;
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0.3rem 0;
 }
 
 .dropdown-menu::before,
@@ -211,37 +210,63 @@ a {
 
 .dropdown-item, .dropdown-menu a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 6px;
-    letter-spacing: 1px;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.3px;
     color: #fff !important;
     background: #014903 !important;
     transition: all 0.2s;
+    padding: 0.3rem 1rem;
+    white-space: normal;
+    line-height: 1.2;
 }
 
-/* Department dropdown panel and options size reduction */
+/* Department dropdown panel */
 .dropdown-menu[aria-labelledby="departmentDropdown"] {
-    min-width: 100px !important;
-    width: 120px !important;
-    padding: 0.25rem 0.5rem !important;
+    min-width: 250px !important;
+    padding: 0.3rem 0 !important;
+    max-height: 500px;
+    overflow-y: auto;
 }
-.dropdown-menu[aria-labelledby="departmentDropdown"] > li:not(.dropdown-submenu) > a.dropdown-item {
-    font-size: 6px !important;
-    max-width: 90px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: block;
+
+.dropdown-menu[aria-labelledby="aboutDropdown"] {
+    min-width: 180px !important;
+    padding: 0.3rem 0 !important;
+}
+
+.dropdown-submenu .dropdown-menu {
+    left: 100%;
+    top: -4px;
+    margin-left: 0.25rem;
+    border-radius: 4px !important;
+    min-width: 180px !important;
+    padding: 0.2rem 0 !important;
+}
+
+.dropdown-item {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-toggle::after {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
-/* Keep DIVISIONS and its submenu at normal size */
+/* Submenu items */
 .dropdown-item.division-special, 
 .dropdown-submenu .dropdown-item {
-    font-size: 12px !important;
-    padding: 0.5rem 1.5rem;
+    font-size: 10px !important;
+    padding: 0.2rem 0.8rem 0.2rem 1rem;
     font-weight: 400;
+    white-space: nowrap;
+    line-height: 1.1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .dropdown-item:hover, 
