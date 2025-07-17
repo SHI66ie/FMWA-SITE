@@ -256,6 +256,11 @@ a {
 }
 
 
+/* Hidden Navigation Items */
+.nav-item.hidden-nav-item .nav-link {
+    visibility: hidden;
+}
+
 /* Submenu items */
 .dropdown-item.division-special, 
 .dropdown-submenu .dropdown-item {
