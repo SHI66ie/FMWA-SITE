@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-    --primary-color: #0d6efd;
+    --primary-color: #014903;
     --secondary-color: #6c757d;
     --dark-color: #343a40;
     --light-color: #f8f9fa;
@@ -29,6 +29,10 @@ body {
         max-width: 600px;
         margin-left: 40px !important;
     }
+}
+
+.functions-list {
+    line-height: 1.7;
 }
 
 /* Leadership section styles */
@@ -98,13 +102,13 @@ a {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: #014903;
     border-color: var(--primary-color);
 }
 
 .btn-primary:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
+    background-color: #013d03;
+    border-color: #013001;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -271,7 +275,7 @@ a {
 .dropdown-item:hover, 
 .dropdown-menu a:hover {
     background-color: #fff !important;
-    color: #0d6efd !important;
+    color: #014903 !important;
 }
 
 /* Keep DIVISIONS custom hover */
@@ -318,7 +322,7 @@ a {
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: 1px;
-    color: #fff;
+    color: #014903;
     text-align: left;
     margin-left: 0;
     margin-right: 18px;
@@ -501,7 +505,7 @@ a {
 }
 
 .quick-links .card i {
-    color: var(--primary-color);
+    color: #014903;
 }
 
 /* Latest News */
@@ -522,7 +526,7 @@ a {
 }
 
 .latest-news .btn-link {
-    color: var(--primary-color);
+    color: #014903;
     font-weight: 500;
 }
 
@@ -549,7 +553,7 @@ a {
 .quick-stats {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+    background: linear-gradient(135deg, #014903 0%, #198754 100%);
 }
 
 .quick-stats .display-4 {
@@ -581,7 +585,7 @@ footer h5::after {
     bottom: 0;
     width: 50px;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: #014903;
 }
 
 footer ul li {
@@ -606,7 +610,7 @@ footer a:hover {
 }
 
 .social-links a:hover {
-    background-color: var(--primary-color);
+    background-color: #014903;
     transform: translateY(-3px);
 }
 
@@ -684,7 +688,7 @@ footer a:hover {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background-color: var(--primary-color);
+    background-color: #014903;
 }
 
 .shadow-sm {
@@ -772,6 +776,31 @@ footer a:hover {
 
 /* Add custom styles below this line */
 
+h2.section-title, h2.section-title.mb-4 {
+    font-size: 1.4rem !important;
+    line-height: 1.08 !important;
+}
+
+.background-compact {
+    font-size: 0.98rem;
+    line-height: 1.45;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
+    color: #222;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.text-primary, h2.text-primary, h3.text-primary, h5.text-primary, i.text-primary, .card-title.text-primary {
+    color: #014903 !important;
+}
+.bg-primary {
+    background-color: #014903 !important;
+}
+
+
 /* Hero carousel logo - shrink size */
 .carousel-item img[alt="FMWA Logo"] {
     width: 50% !important; /* 50% of its container */
@@ -850,4 +879,50 @@ footer a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #0b5ed7;
+}
+
+/* Expanded Content Styles */
+.expanded-content {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    animation: fadeInDown 0.3s ease-in-out;
+}
+
+.expanded-content h5 {
+    color: #014903;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.expanded-content ul {
+    margin-bottom: 1rem;
+}
+
+.expanded-content .list-unstyled li {
+    padding: 0.25rem 0;
+    color: #495057;
+}
+
+.expanded-content .small {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.expanded-content .small li {
+    margin-bottom: 0.25rem;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
