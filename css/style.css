@@ -863,9 +863,12 @@ h2.section-title, h2.section-title.mb-4 {
 }
 
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Cross-browser compatible */
+/* For WebKit browsers (Chrome, Safari, newer Edge) */
+/* These will be ignored by non-WebKit browsers */
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -879,6 +882,21 @@ h2.section-title, h2.section-title.mb-4 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #0b5ed7;
+}
+
+/* For Firefox - will only be applied in Firefox */
+@supports (scrollbar-width: thin) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-color) #f1f1f1;
+    }
+}
+
+/* For Edge and IE */
+@supports (-ms-ime-align: auto) {
+    * {
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
 }
 
 /* Expanded Content Styles */
