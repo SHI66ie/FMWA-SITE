@@ -167,15 +167,7 @@ a {
 }
 
 .nav-link:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--primary-color);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+    display: none; /* Remove the underline completely */
 }
 
 .nav-link:hover:after,
@@ -204,8 +196,10 @@ a {
 .dropdown-menu::before,
 .dropdown-menu::after {
     border: none !important;
-    background: transparent !important;
+    border-bottom: none !important;
     box-shadow: none !important;
+    /* Ensure no underline appears */
+    background: none !important;
 }
 
 .dropdown-item, .dropdown-menu a {
