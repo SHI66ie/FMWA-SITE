@@ -1,4 +1,15 @@
 /* General Styles */
+html {
+    overflow-y: scroll;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 :root {
     --primary-color: #0d6efd;
     --secondary-color: #6c757d;

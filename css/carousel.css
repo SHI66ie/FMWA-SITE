@@ -22,18 +22,23 @@
 }
 
 .carousel-item {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: none;
     width: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-in-out;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
     align-items: center;
     background-color: #f8f9fa;
     padding: 40px 0;
     box-sizing: border-box;
     opacity: 0;
     will-change: transform, opacity;
+    transform: translateX(0);
+    pointer-events: none;
 }
 
 .carousel-item.active {
@@ -42,6 +47,7 @@
     transform: translateX(0) scale(1);
     position: relative;
     z-index: 2;
+    pointer-events: auto;
 }
 
 .carousel-item-next,
@@ -62,14 +68,14 @@
 
 .carousel-item-next:not(.carousel-item-start),
 .active.carousel-item-end.carousel-item-next:not(.carousel-item-start) {
-    transform: translateX(100%) scale(0.95);
-    opacity: 0.7;
+    transform: translateX(100%);
+    opacity: 0;
 }
 
 .carousel-item-prev:not(.carousel-item-end),
 .active.carousel-item-start.carousel-item-prev:not(.carousel-item-end) {
-    transform: translateX(-100%) scale(0.95);
-    opacity: 0.7;
+    transform: translateX(-100%);
+    opacity: 0;
 }
 
 .carousel-item .image-container {
