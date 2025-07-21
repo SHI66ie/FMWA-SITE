@@ -7,14 +7,39 @@
 
 .fmwa-navbar-title {
     display: inline-block;
-    white-space: nowrap;
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin-left: 10px;
+    white-space: normal;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
+
+/* Adjust logo and title for mobile */
+@media (max-width: 767.98px) {
+    .navbar-brand {
+        max-width: 80%;
+    }
+    
+    .fmwa-logo-stretch {
+        height: 40px;
+        margin-left: 5px;
+    }
+    
+    .fmwa-navbar-title {
+        font-size: 0.85rem;
+        letter-spacing: 0.3px;
+        white-space: normal;
+        word-break: break-word;
+    }
+    
+    .logo-divider {
+        height: 25px;
+        margin: 0 5px;
+    }
 }
 
 .logo-divider {
