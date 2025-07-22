@@ -97,6 +97,17 @@ myCarousel.addEventListener('slide.bs.carousel', function (e) {
     p.style.animation = 'fadeInUp 1s ease 0.3s';
 });
 
+// Close mobile menu when clicking on a nav link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+            bsCollapse.hide();
+        }
+    });
+});
+
 // Form validation
 const forms = document.querySelectorAll('.needs-validation');
 
