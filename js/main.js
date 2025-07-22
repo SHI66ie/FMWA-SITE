@@ -97,13 +97,39 @@ myCarousel.addEventListener('slide.bs.carousel', function (e) {
     p.style.animation = 'fadeInUp 1s ease 0.3s';
 });
 
-// Close mobile menu when clicking on a nav link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse.classList.contains('show')) {
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
-            bsCollapse.hide();
+// Enhanced mobile menu close functionality for all browsers including Safari
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    // Close menu when clicking on a nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (window.innerWidth < 992) { // Only for mobile view
+                if (navbarCollapse.classList.contains('show')) {
+                    // Use both Bootstrap's method and direct class manipulation
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+                    bsCollapse.hide();
+                    
+                    // Force close by removing show class and setting aria-expanded
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                    
+                    // Force a reflow/repaint
+                    void navbarCollapse.offsetHeight;
+                }
+            }
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+            if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+                bsCollapse.hide();
+            }
         }
     });
 });
