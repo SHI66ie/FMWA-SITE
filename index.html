@@ -14,16 +14,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/carousel.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/downloads.css">
-    <link rel="stylesheet" href="css/leadership.css">
+    <link rel="stylesheet" href="css/style.css?v=1.0.1">
+    <link rel="stylesheet" href="css/header.css?v=1.0.1">
+    <!-- Carousel Styles -->
+    <link rel="stylesheet" href="css/carousel-styles.css">
+    <link rel="stylesheet" href="css/general.css?v=1.0.1">
+    <link rel="stylesheet" href="css/footer.css?v=1.0.1">
+    <link rel="stylesheet" href="css/downloads.css?v=1.0.1">
+    <link rel="stylesheet" href="css/leadership.css?v=1.0.1">
     
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- Carousel Initialization -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize carousel with autoplay
+        var myCarousel = new bootstrap.Carousel(document.getElementById('heroCarousel'), {
+            interval: 5000, // Change slide every 5 seconds
+            wrap: true,
+            touch: true
+        });
+        
+        // Pause autoplay when hovering over the carousel
+        var carouselElement = document.getElementById('heroCarousel');
+        carouselElement.addEventListener('mouseenter', function() {
+            myCarousel.pause();
+        });
+        carouselElement.addEventListener('mouseleave', function() {
+            myCarousel.cycle();
+        });
+    });
+    </script>
     
     <!-- YouTube API -->
     <script src="js/youtube-api.js"></script>
@@ -139,16 +161,16 @@
                             Departments
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="departmentsDropdown">
-                            <li><a class="dropdown-item" href="#" title="Women Development">Women Development</a></li>
-                            <li><a class="dropdown-item" href="#" title="Child Development">Child Development</a></li>
-                            <li><a class="dropdown-item" href="#" title="Community Development & Social Intervention">Community Development & Social Intervention</a></li>
-                            <li><a class="dropdown-item" href="#" title="Gender Affairs">Gender Affairs</a></li>
-                            <li><a class="dropdown-item" href="#" title="Nutrition">Nutrition</a></li>
-                            <li><a class="dropdown-item" href="#" title="General Services">General Services</a></li>
-                            <li><a class="dropdown-item" href="#" title="Planning, Research & Statistics">Planning, Research & Statistics</a></li>
-                            <li><a class="dropdown-item" href="#" title="Finance & Accounting">Finance & Accounting</a></li>
-                            <li><a class="dropdown-item" href="#" title="Procurement">Procurement</a></li>
-                            <li><a class="dropdown-item" href="#" title="Reform Coordination & Service Improvement">Reform Coordination & Service Improvement</a></li>
+                            <li><a class="dropdown-item" href="departments/women-development.html" title="Women Development">Women Development</a></li>
+                            <li><a class="dropdown-item" href="departments/child-development.html" title="Child Development">Child Development</a></li>
+                            <li><a class="dropdown-item" href="departments/community-development-social-intervention.html" title="Community Development & Social Intervention">Community Development & Social Intervention</a></li>
+                            <li><a class="dropdown-item" href="departments/gender-affairs.html" title="Gender Affairs">Gender Affairs</a></li>
+                            <li><a class="dropdown-item" href="departments/nutrition.html" title="Nutrition">Nutrition</a></li>
+                            <li><a class="dropdown-item" href="departments/general-services.html" title="General Services">General Services</a></li>
+                            <li><a class="dropdown-item" href="departments/planning-research-statistics.html" title="Planning, Research & Statistics">Planning, Research & Statistics</a></li>
+                            <li><a class="dropdown-item" href="departments/finance-accounting.html" title="Finance & Accounting">Finance & Accounting</a></li>
+                            <li><a class="dropdown-item" href="departments/procurement.html" title="Procurement">Procurement</a></li>
+                            <li><a class="dropdown-item" href="departments/reform-coordination-service-improvement.html" title="Reform Coordination & Service Improvement">Reform Coordination & Service Improvement</a></li>
                             <li class="dropdown-divider"></li>
                             <li class="dropdown-submenu">
                                 <a class="dropdown-item dropdown-toggle" href="#" title="Divisions">Divisions</a>
@@ -168,7 +190,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Welcome Section -->
     <section class="welcome-section">
         <div class="container position-relative">
             <div class="scrolling-text-container">
@@ -179,38 +201,41 @@
         </div>
     </section>
 
-    <!-- Hero Carousel -->
-    <section class="hero-section">
-        <div id="heroCarousel" class="carousel slide">
-            <div class="carousel-inner" aria-live="polite">
-                <div class="carousel-item active">
-                    <div class="image-container">
-                        <img src="images/2025_07_11_16_37_IMG_2804.JPG" alt="FMWA Event">
-                        <img src="images/2025_07_11_16_39_IMG_2805.JPG" alt="FMWA Event">
+    <!-- Hero Section with White Background -->
+    <section class="hero-section bg-white py-5">
+        <div class="container">
+            <div id="heroCarousel" class="carousel slide">
+                <div class="carousel-inner" aria-live="polite">
+                    <div class="carousel-item active">
+                        <div class="image-container d-flex justify-content-center">
+                            <img src="images/2025_07_11_16_37_IMG_2804.JPG" alt="FMWA Event" class="img-fluid me-2">
+                            <img src="images/2025_07_11_16_39_IMG_2805.JPG" alt="FMWA Event" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="image-container d-flex justify-content-center">
+                            <img src="images/2025_07_11_16_40_IMG_2806.JPG" alt="FMWA Event" class="img-fluid me-2">
+                            <img src="images/2025_07_11_16_37_IMG_2804.JPG" alt="FMWA Event" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="image-container d-flex justify-content-center">
+                            <img src="images/2025_07_11_16_39_IMG_2805.JPG" alt="FMWA Event" class="img-fluid me-2">
+                            <img src="images/2025_07_11_16_40_IMG_2806.JPG" alt="FMWA Event" class="img-fluid">
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="image-container">
-                        <img src="images/2025_07_11_16_40_IMG_2806.JPG" alt="FMWA Event">
-                        <img src="images/2025_07_11_16_37_IMG_2804.JPG" alt="FMWA Event">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="image-container">
-                        <img src="images/2025_07_11_16_39_IMG_2805.JPG" alt="FMWA Event">
-                        <img src="images/2025_07_11_16_40_IMG_2806.JPG" alt="FMWA Event">
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
+    </section>
     </section>
 
     <!-- Leadership Section -->
@@ -527,210 +552,7 @@
     <script src="js/highlight-section.js"></script>
     <script src="js/cookie-consent.js"></script>
     <script>
-    // Initialize carousel with enhanced transitions and performance
-    document.addEventListener('DOMContentLoaded', function() {
-        const myCarousel = document.querySelector('#heroCarousel');
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        let isAnimating = false;
-        let autoTransitionTimer;
-        let touchStartX = 0;
-        let touchEndX = 0;
-        const TRANSITION_DURATION = 800; // Match this with CSS transition duration
-        const AUTO_TRANSITION_DELAY = 3000; // 3 seconds between auto-transitions
-        const SWIPE_THRESHOLD = 50; // Minimum swipe distance in pixels
-
-        // Ensure first slide is visible on load
-        if (carouselItems.length > 0) {
-            carouselItems[0].classList.add('active');
-            carouselItems[0].style.opacity = '1';
-        }
-
-        // Initialize carousel with custom settings
-        const carousel = new bootstrap.Carousel(myCarousel, {
-            interval: false, // We'll handle auto-transition manually
-            touch: true,    // Enable touch swiping
-            wrap: true,     // Enable continuous loop
-            keyboard: true  // Enable keyboard navigation
-        });
-
-        // Function to reset the auto-transition timer
-        function resetAutoTransitionTimer() {
-            clearTimeout(autoTransitionTimer);
-            autoTransitionTimer = setTimeout(() => {
-                if (!isAnimating && document.visibilityState === 'visible') {
-                    slideTo('next');
-                }
-            }, AUTO_TRANSITION_DELAY);
-        }
-        
-        // Main slide transition function
-        function slideTo(direction) {
-            if (isAnimating) return;
-            
-            isAnimating = true;
-            const activeItem = document.querySelector('.carousel-item.active');
-            if (!activeItem) return;
-            
-            const activeIndex = Array.from(carouselItems).indexOf(activeItem);
-            const nextIndex = direction === 'prev' 
-                ? (activeIndex - 1 + carouselItems.length) % carouselItems.length
-                : (activeIndex + 1) % carouselItems.length;
-            
-            const nextItem = carouselItems[nextIndex];
-            if (!nextItem) return;
-            
-            // Set up initial states
-            nextItem.style.display = 'flex';
-            nextItem.style.opacity = '0';
-            nextItem.style.zIndex = '2';
-            activeItem.style.zIndex = '1';
-            
-            // Force reflow to ensure initial styles are applied
-            nextItem.offsetHeight;
-            
-            // Start transition
-            nextItem.classList.add('active');
-            nextItem.style.opacity = '1';
-            
-            // Animate
-            requestAnimationFrame(() => {
-                activeItem.style.opacity = '0';
-                
-                // Clean up after transition
-                setTimeout(() => {
-                    activeItem.classList.remove('active');
-                    activeItem.style.opacity = '';
-                    nextItem.style.zIndex = '';
-                    activeItem.style.zIndex = '';
-                    isAnimating = false;
-                    
-                    // Update indicators if present
-                    updateIndicators(nextIndex);
-                    
-                    // Reset auto-transition timer
-                    resetAutoTransitionTimer();
-                }, TRANSITION_DURATION);
-            });
-        }
-        
-        // Update carousel indicators
-        function updateIndicators(activeIndex) {
-            const indicators = document.querySelectorAll('.carousel-indicators button');
-            indicators.forEach((indicator, index) => {
-                if (index === activeIndex) {
-                    indicator.classList.add('active');
-                    indicator.setAttribute('aria-current', 'true');
-                } else {
-                    indicator.classList.remove('active');
-                    indicator.removeAttribute('aria-current');
-                }
-            });
-        }
-
-        // Function to handle navigation
-        function handleNavigation(direction) {
-            if (isAnimating) return;
-            slideTo(direction);
-            resetAutoTransitionTimer();
-        }
-
-        // Navigation controls
-        const prevButton = myCarousel.querySelector('.carousel-control-prev');
-        const nextButton = myCarousel.querySelector('.carousel-control-next');
-        
-        // Handle previous button
-        if (prevButton) {
-            prevButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                handleNavigation('prev');
-            });
-            
-            // Also handle the inner icon click
-            const prevIcon = prevButton.querySelector('.carousel-control-prev-icon');
-            if (prevIcon) {
-                prevIcon.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    handleNavigation('prev');
-                });
-            }
-        }
-        
-        // Handle next button
-        if (nextButton) {
-            nextButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                handleNavigation('next');
-            });
-            
-            // Also handle the inner icon click
-            const nextIcon = nextButton.querySelector('.carousel-control-next-icon');
-            if (nextIcon) {
-                nextIcon.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    handleNavigation('next');
-                });
-            }
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (document.activeElement.tagName === 'BODY') {
-                if (e.key === 'ArrowLeft') slideTo('prev');
-                else if (e.key === 'ArrowRight') slideTo('next');
-            }
-        });
-
-        // Touch events for mobile
-        myCarousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        myCarousel.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-        
-        function handleSwipe() {
-            if (touchEndX < touchStartX - SWIPE_THRESHOLD) {
-                slideTo('next');
-            } else if (touchEndX > touchStartX + SWIPE_THRESHOLD) {
-                slideTo('prev');
-            }
-        }
-
-        // Pause auto-transition on interaction
-        const pauseAutoTransition = () => clearTimeout(autoTransitionTimer);
-        const resumeAutoTransition = () => resetAutoTransitionTimer();
-        
-        myCarousel.addEventListener('mouseenter', pauseAutoTransition);
-        myCarousel.addEventListener('mouseleave', resumeAutoTransition);
-        myCarousel.addEventListener('touchstart', pauseAutoTransition, { passive: true });
-        myCarousel.addEventListener('touchend', resumeAutoTransition, { passive: true });
-        
-        // Handle visibility changes
-        document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'visible') {
-                resumeAutoTransition();
-            } else {
-                pauseAutoTransition();
-            }
-        });
-
-        // Initialize
-        resetAutoTransitionTimer();
-        
-        // Clean up event listeners when component unmounts
-        return () => {
-            clearTimeout(autoTransitionTimer);
-            myCarousel.removeEventListener('mouseenter', pauseAutoTransition);
-            myCarousel.removeEventListener('mouseleave', resumeAutoTransition);
-            myCarousel.removeEventListener('touchstart', pauseAutoTransition);
-            myCarousel.removeEventListener('touchend', resumeAutoTransition);
-            document.removeEventListener('visibilitychange', resumeAutoTransition);
-        };
-    });
+    // Carousel JavaScript removed
     </script>
     <script src="js/division-submenu.js"></script>
     <script src="js/shrink-dropdown-options.js"></script>

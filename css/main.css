@@ -220,6 +220,18 @@ a:hover {
   height: auto;
 }
 
+/* Carousel Fix */
+.carousel-item {
+    background-color: initial; /* or transparent */
+    display: none;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+    opacity: 1;
+}
+
 /* Print styles */
 @media print {
   *,

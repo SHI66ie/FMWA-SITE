@@ -1,0 +1,63 @@
+/* Carousel Styles */
+.hero-section {
+    background-color: white;
+    padding: 2rem 0;
+}
+
+.carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.image-container img {
+    max-height: 400px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Ensure proper spacing between carousel and next section */
+.welcome-section {
+    padding-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+    }
+    
+    .image-container img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .image-container img:last-child {
+        margin-bottom: 0;
+    }
+}

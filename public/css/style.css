@@ -1,3 +1,47 @@
+/* Carousel Styles */
+.carousel {
+    background: #ffffff !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.carousel-inner {
+    background: #ffffff !important;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-item {
+    background: #ffffff !important;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 /* Global Styles */
 :root {
     --primary-color: #014903;
@@ -307,6 +351,109 @@ a {
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+
+/* Welcome Section */
+.welcome-section {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+    overflow: hidden; /* Ensures the sliding content doesn't cause horizontal scroll */
+    position: relative;
+}
+
+.welcome-section .container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Welcome heading animation */
+@keyframes scrollInOut {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Welcome section specific styles */
+.welcome-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.welcome-section .container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.welcome-section h1.fw-bold {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    animation: scrollInOut 10s linear infinite;
+    animation-fill-mode: both;
+    opacity: 0;
+    padding: 0 50px;
+    margin: 0;
+    width: auto;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    -webkit-animation: scrollInOut 10s linear infinite;
+    -moz-animation: scrollInOut 10s linear infinite;
+    -ms-animation: scrollInOut 10s linear infinite;
+    -o-animation: scrollInOut 10s linear infinite;
+}
+
+/* Ensure visibility during animation */
+@-webkit-keyframes scrollInOut { /* Chrome, Safari, Opera */
+    0% { -webkit-transform: translateX(-100%); opacity: 0; }
+    10% { -webkit-transform: translateX(0); opacity: 1; }
+    80% { -webkit-transform: translateX(0); opacity: 1; }
+    100% { -webkit-transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes scrollInOut {
+    0% { transform: translateX(-100%); opacity: 0; }
+    10% { transform: translateX(0); opacity: 1; }
+    80% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+}
+
+/* Add a slight delay to the paragraph for a cascading effect */
+.welcome-section .lead {
+    animation: slideInFromLeft 1s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+/* Add a slight delay to the button */
+.welcome-section .btn {
+    animation: slideInFromLeft 1s ease-out 0.6s forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+    display: inline-block; /* Ensures transform works properly */
 }
 
 /* FMWA Logo */
