@@ -59,9 +59,15 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+    /* Text rendering optimizations */
+    -webkit-font-smoothing: antialiased;  /* Improve text rendering in WebKit */
+    -moz-osx-font-smoothing: grayscale;   /* Improve text rendering in Firefox on macOS */
+    text-rendering: optimizeLegibility;   /* Improve text rendering in modern browsers */
+    
+    /* Text size adjustment - using standard property with fallbacks */
+    text-size-adjust: 100%;               /* Standard property */
+    -webkit-text-size-adjust: 100%;       /* For older WebKit browsers */
+    -ms-text-size-adjust: 100%;           /* For older IE/Edge */
 }
 
 .left-align-section {
@@ -1049,15 +1055,38 @@ h2.section-title, h2.section-title.mb-4 {
     background: #0b5ed7;
 }
 
-/* For Firefox */
-@-moz-document url-prefix() {
+/* Standard scrollbar styling */
+* {
+    /* For IE and Edge */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/* For modern browsers that support scrollbar styling */
+@supports (scrollbar-width: thin) {
     * {
         scrollbar-width: thin;
         scrollbar-color: var(--primary-color) #f1f1f1;
     }
 }
 
-/* For modern browsers that support scrollbar-width */
+/* WebKit scrollbar styling */
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #0b5ed7;
+}
 @supports (scrollbar-width: thin) {
     * {
         scrollbar-width: thin;

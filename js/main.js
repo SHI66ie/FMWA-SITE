@@ -97,40 +97,97 @@ myCarousel.addEventListener('slide.bs.carousel', function (e) {
     p.style.animation = 'fadeInUp 1s ease 0.3s';
 });
 
-// Enhanced mobile menu close functionality for all browsers including Safari
+// Enhanced mobile menu functionality for all browsers including Safari
 document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Get the navbar toggler and menu elements
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    // Close menu when clicking on a nav link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth < 992) { // Only for mobile view
-                if (navbarCollapse.classList.contains('show')) {
-                    // Use both Bootstrap's method and direct class manipulation
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
-                    bsCollapse.hide();
-                    
-                    // Force close by removing show class and setting aria-expanded
+    // Add smooth dropdown animation
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Toggle the 'show' class with animation
+            if (navbarCollapse.classList.contains('show')) {
+                // Closing animation
+                navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
+                // Trigger reflow
+                void navbarCollapse.offsetHeight;
+                navbarCollapse.style.maxHeight = '0';
+                
+                // After animation completes, remove the show class
+                setTimeout(() => {
                     navbarCollapse.classList.remove('show');
+                    navbarCollapse.style.maxHeight = ''; // Reset max-height
                     navbarToggler.setAttribute('aria-expanded', 'false');
-                    
-                    // Force a reflow/repaint
-                    void navbarCollapse.offsetHeight;
-                }
+                }, 300); // Match this with your CSS transition time
+            } else {
+                // Opening animation
+                navbarCollapse.classList.add('show');
+                navbarCollapse.style.maxHeight = '0';
+                // Trigger reflow
+                void navbarCollapse.offsetHeight;
+                navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
+                navbarToggler.setAttribute('aria-expanded', 'true');
+                
+                // After animation completes, set to auto height
+                setTimeout(() => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.style.maxHeight = '';
+                    }
+                }, 300);
             }
         });
-    });
-    
-    // Close menu when clicking outside
+        
+        // Close menu when clicking on a nav link (for mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.style.maxHeight = '0';
+                    setTimeout(() => {
+                        navbarCollapse.classList.remove('show');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    }, 300);
+                }
+            });
+        });
+    }
+        // Close menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+        if (window.innerWidth < 992 && navbarCollapse && navbarCollapse.classList.contains('show')) {
             if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
-                bsCollapse.hide();
+                // Use our custom animation for closing
+                navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
+                void navbarCollapse.offsetHeight; // Trigger reflow
+                navbarCollapse.style.maxHeight = '0';
+                
+                setTimeout(() => {
+                    navbarCollapse.classList.remove('show');
+                    navbarCollapse.style.maxHeight = '';
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                }, 300);
             }
         }
+    });
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (window.innerWidth >= 992) {
+                // Reset styles on desktop
+                if (navbarCollapse) {
+                    navbarCollapse.style.maxHeight = '';
+                    navbarCollapse.classList.remove('show');
+                }
+                if (navbarToggler) {
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                }
+            }
+        }, 250);
     });
 });
 
