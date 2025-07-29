@@ -2,8 +2,12 @@
 .welcome-section {
     position: relative;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 0 1rem;
     background-color: #f8f9fa;
+    min-height: 80px; /* Match navigation bar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .welcome-section .compact-container {
@@ -31,10 +35,16 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .welcome-section {
-        padding: 1.5rem 0.5rem;
+        padding: 0 0.5rem;
+        min-height: 60px; /* Slightly smaller height on mobile */
     }
     
     .welcome-section .scrolling-text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+    
+    .welcome-section .lead {
+        margin-bottom: 0;
     }
 }
