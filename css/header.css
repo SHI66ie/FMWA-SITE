@@ -104,6 +104,8 @@
     font-size: 0.9em;
     padding: 0.5rem 0;
     margin-top: 0.5rem;
+    left: auto !important;
+    right: 0;
 }
 
 .dropdown-item {
@@ -155,6 +157,22 @@
 /* Departments dropdown specific adjustments */
 #departmentsDropdown.dropdown-toggle::after {
     margin-left: 0.25em;
+}
+
+/* Ensure dropdowns stay within viewport */
+.dropdown:not(.dropstart) .dropdown-menu {
+    left: auto !important;
+    right: 0;
+}
+
+/* Adjust position for dropdown-submenu */
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: auto !important;
+    right: 100%;
+    margin-top: -6px;
+    margin-right: -1px;
+    border-radius: 6px 0 6px 6px;
 }
 
 /* Mobile Navigation Styles */
