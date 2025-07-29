@@ -64,10 +64,13 @@ body {
     -moz-osx-font-smoothing: grayscale;   /* Improve text rendering in Firefox on macOS */
     text-rendering: optimizeLegibility;   /* Improve text rendering in modern browsers */
     
-    /* Text size adjustment - using vendor prefixes for maximum compatibility */
+    /* Text size adjustment with browser support detection */
     -webkit-text-size-adjust: 100%;       /* For older WebKit browsers */
     -ms-text-size-adjust: 100%;           /* For older IE/Edge */
-    text-size-adjust: 100%;               /* Standard property */
+    
+    @supports (text-size-adjust: 100%) or (-webkit-text-size-adjust: 100%) or (-ms-text-size-adjust: 100%) {
+        text-size-adjust: 100%;
+    }
 }
 
 .left-align-section {
