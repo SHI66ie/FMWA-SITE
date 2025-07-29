@@ -194,14 +194,44 @@
         </div>
     </nav>
 
-    <!-- Welcome Section -->
-    <section class="welcome-section">
-        <div class="container position-relative compact-container">
+    <!-- Welcome Section with Inline Styles -->
+    <section class="welcome-section" style="background-color: #f8f9fa; padding: 0.8rem 0; border-bottom: 1px solid #e9ecef; width: 100%; overflow: hidden; position: relative; z-index: 10;">
+        <style>
+            @keyframes scrollText {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-100%); }
+            }
+            .scrolling-text {
+                white-space: nowrap;
+                display: inline-block;
+                padding-left: 100%;
+                animation: scrollText 20s linear infinite;
+                margin: 0;
+                font-size: 0.9rem;
+                color: #2c3e50;
+                font-weight: 500;
+            }
+            .scrolling-text i {
+                color: #e83e8c;
+                margin-right: 8px;
+            }
+            @media (max-width: 991.98px) {
+                .scrolling-text {
+                    font-size: 0.8rem;
+                }
+            }
+        </style>
+        <div class="container">
             <div class="scrolling-text-container">
-                <h1 class="fw-bold scrolling-text">Welcome to Federal Ministry of Women Affairs</h1>
+                <div class="scrolling-text">
+                    <i class="fas fa-bullhorn"></i>
+                    Welcome to the Federal Ministry of Women Affairs - Empowering Women, Transforming Lives &nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-star"></i>
+                    Latest Updates: New initiatives for women's empowerment launching soon! &nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-calendar-alt"></i>
+                    Upcoming Events: National Women's Conference 2025 - Register Now!
+                </div>
             </div>
-            <p class="lead">Empowering women, transforming communities</p>
-            <a href="#about-section" class="btn btn-success">Explore More</a>
         </div>
     </section>
 
@@ -394,16 +424,7 @@
                                 <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4 flex-shrink-0" style="min-width: 300px;">
-                            <div class="news-item">
-                                <img src="images/news2.jpg" alt="News 2" class="img-fluid">
-                                <span class="news-date"><i class="far fa-calendar-alt me-2"></i>July 5, 2025</span>
-                                <h4 class="news-title">Government Launches Digital Transformation Program</h4>
-                                <p>The government has commenced the implementation of a digital transformation program to modernize public service operations.</p>
-                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4 flex-shrink-0" style="min-width: 300px;">
+                        <div class="col-md-6 mb-4">
                             <div class="news-item">
                                 <img src="images/news3.jpg" alt="News 3" class="img-fluid">
                                 <span class="news-date"><i class="far fa-calendar-alt me-2"></i>June 28, 2025</span>
@@ -412,7 +433,7 @@
                                 <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4 flex-shrink-0" style="min-width: 300px;">
+                        <div class="col-md-6 mb-4">
                             <div class="news-item">
                                 <img src="images/news4.jpg" alt="News 4" class="img-fluid">
                                 <span class="news-date"><i class="far fa-calendar-alt me-2"></i>June 15, 2025</span>
