@@ -163,17 +163,23 @@
 .dropdown:not(.dropstart) .dropdown-menu {
     left: auto !important;
     right: 0;
-    margin-right: 15px; /* Add right margin */
+    margin-right: 30px !important; /* Increased right margin */
+    margin-top: 10px !important; /* Add top margin */
+    min-width: 250px; /* Ensure minimum width */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Add shadow for depth */
+    border: 1px solid rgba(0,0,0,0.1); /* Add subtle border */
 }
 
 /* Adjust position for dropdown-submenu */
 .dropdown-submenu > .dropdown-menu {
-    top: 0;
+    top: -10px;
     left: auto !important;
     right: 100%;
-    margin-top: -6px;
-    margin-right: 15px; /* Increased from -1px to 15px */
-    border-radius: 6px 6px 6px 6px; /* Consistent border radius */
+    margin-top: 0;
+    margin-right: 20px !important; /* Increased spacing */
+    border-radius: 6px !important;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2); /* Add shadow */
+    border: 1px solid rgba(0,0,0,0.1); /* Match main dropdown */
 }
 
 /* Mobile Navigation Styles */
