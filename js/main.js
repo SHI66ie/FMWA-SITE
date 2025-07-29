@@ -144,6 +144,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when clicking on a nav link (for mobile)
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
+                const isDropdownToggle = this.classList.contains('dropdown-toggle') || this.getAttribute('data-bs-toggle') === 'dropdown';
+                // Keep the menu open when the user is toggling a dropdown inside the collapsed navbar
+                if (isDropdownToggle) {
+                    return;
+                }
+
                 if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
                     navbarCollapse.style.maxHeight = '0';
                     setTimeout(() => {
