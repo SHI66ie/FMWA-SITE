@@ -163,6 +163,7 @@
 .dropdown:not(.dropstart) .dropdown-menu {
     left: auto !important;
     right: 0;
+    margin-right: 15px; /* Add right margin */
 }
 
 /* Adjust position for dropdown-submenu */
@@ -171,8 +172,8 @@
     left: auto !important;
     right: 100%;
     margin-top: -6px;
-    margin-right: -1px;
-    border-radius: 6px 0 6px 6px;
+    margin-right: 15px; /* Increased from -1px to 15px */
+    border-radius: 6px 6px 6px 6px; /* Consistent border radius */
 }
 
 /* Mobile Navigation Styles */
