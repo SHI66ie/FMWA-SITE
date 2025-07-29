@@ -1,0 +1,40 @@
+/* Welcome Section Styles */
+.welcome-section {
+    position: relative;
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+}
+
+.welcome-section .compact-container {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.welcome-section .scrolling-text-container {
+    margin-bottom: 0.3rem;
+}
+
+.welcome-section .scrolling-text {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.welcome-section .lead {
+    margin-bottom: 0.3rem;
+}
+
+.welcome-section .btn {
+    margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .welcome-section {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .welcome-section .scrolling-text {
+        font-size: 1.5rem;
+    }
+}
