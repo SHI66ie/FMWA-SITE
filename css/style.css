@@ -29,22 +29,15 @@
 
 @keyframes scroll {
     0% {
-        transform: translateX(-100%);
-        animation-timing-function: ease-out;
-    }
-    20% {
         transform: translateX(0);
         animation-timing-function: linear;
     }
-    30% {
+    90% {
         transform: translateX(0);
-    }
-    40% {
-        transform: translateX(0);
-        animation-timing-function: ease-in;
     }
     100% {
         transform: translateX(100%);
+        animation-timing-function: ease-in;
     }
 }
 
