@@ -106,6 +106,8 @@
     margin-top: 0.5rem;
     left: auto !important;
     right: 0;
+    /* Ensure dropdown doesn't close when clicking inside */
+    pointer-events: auto;
 }
 
 .dropdown-item {
@@ -137,10 +139,41 @@
     vertical-align: middle;
 }
 
-/* Make sure dropdown stays open when hovering */
-.dropdown-menu > .dropdown-submenu:hover > .dropdown-menu,
-.dropdown-menu > .dropdown-submenu:focus-within > .dropdown-menu {
-    display: block;
+/* Completely disable hover behavior for dropdowns */
+.dropdown-menu {
+    pointer-events: none;
+    opacity: 0;
+    display: block !important;
+    visibility: hidden;
+    transition: none !important;
+}
+
+.dropdown-menu.show {
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Prevent any hover effects on dropdown toggles */
+.dropdown-toggle::after {
+    transition: none !important;
+}
+
+/* Disable hover on dropdown items */
+.dropdown-item, .dropdown-toggle {
+    pointer-events: auto;
+}
+
+/* Hide submenus by default */
+.dropdown-menu > .dropdown-submenu > .dropdown-menu {
+    display: none !important;
+    pointer-events: none;
+}
+
+/* Only show submenus when parent has show class */
+.dropdown-menu > .dropdown-submenu.show > .dropdown-menu {
+    display: block !important;
+    pointer-events: auto;
 }
 
 /* Adjust navbar items spacing */

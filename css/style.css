@@ -22,7 +22,7 @@
     margin: 0 auto;
     white-space: nowrap;
     width: fit-content;
-    animation: scroll 15s infinite;
+    animation: scroll 60s infinite;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -811,7 +811,12 @@ footer a:hover {
     min-width: 200px;  /* Ensure minimum width */
 }
 
-.dropdown-submenu:hover > .dropdown-menu {
+/* Dropdown menus now only open on click */
+.dropdown-submenu > .dropdown-menu {
+    display: none;
+}
+
+.dropdown-submenu.show > .dropdown-menu {
     display: block;
 }
 
