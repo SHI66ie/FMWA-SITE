@@ -22,7 +22,7 @@
     margin: 0 auto;
     white-space: nowrap;
     width: fit-content;
-    animation: scroll 60s infinite;
+    animation: scroll 120s infinite;
     font-size: 2rem;
     font-weight: bold;
 }

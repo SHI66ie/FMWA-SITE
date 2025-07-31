@@ -1,4 +1,39 @@
 /* Header and Navigation Styles */
+
+/* Page Header Styles */
+.page-header {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.page-header .lead {
+    font-size: 1rem;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* Make header more compact on smaller screens */
+@media (max-width: 767.98px) {
+    .page-header {
+        padding: 1rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .page-header .lead {
+        font-size: 0.9rem;
+    }
+}
+
 .fmwa-logo-stretch {
     margin-left: 15px;
     height: 50px;

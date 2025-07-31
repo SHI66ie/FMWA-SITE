@@ -53,6 +53,9 @@ figure, figcaption, blockquote, dl, dd {
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  scroll-padding-top: 80px; /* Adjust based on your header height */
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: var(--font-sans);

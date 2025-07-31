@@ -42,20 +42,21 @@ console.log('Attempting to start server...');
 console.log('Current directory:', __dirname);
 console.log('Index.html exists:', fs.existsSync(path.join(__dirname, 'index.html')));
 
-const server = app.listen(PORT, '0.0.0.0', () => {
-    const host = server.address().address;
-    const port = server.address().port;
-    console.log(`Server running at http://${host}:${port}`);
+const server = app.listen(PORT, () => {
+    const host = 'localhost';
+    console.log(`Server running at http://${host}:${PORT}`);
     console.log('Serving files from:', __dirname);
     
-    // List all network interfaces
+    // Log network interfaces for remote access
+    const os = require('os');
+    const ifaces = os.networkInterfaces();
+    
     console.log('Network interfaces:');
-    const interfaces = require('os').networkInterfaces();
-    Object.keys(interfaces).forEach(iface => {
-        interfaces[iface].filter(ip => 
-            ip.family === 'IPv4' && !ip.internal
-        ).forEach(ip => {
-            console.log(`- http://${ip.address}:${port}`);
+    Object.keys(ifaces).forEach(ifname => {
+        ifaces[ifname].forEach(iface => {
+            if ('IPv4' === iface.family && !iface.internal) {
+                console.log(`- http://${iface.address}:${PORT}`);
+            }
         });
     });
 });
