@@ -20,6 +20,33 @@
     <link href="../css/header.css" rel="stylesheet">
     <link href="../css/footer.css" rel="stylesheet">
     <link href="../css/department.css" rel="stylesheet">
+    <style>
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(13, 110, 253, 0.1);
+            border-radius: 10px;
+            margin: 0;
+        }
+        .icon-box i {
+            font-size: 1.25rem;
+            color: #0d6efd;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+    </style>
     
     <!-- Include script for loading header/footer -->
     <script src="../js/include.js"></script>
@@ -48,7 +75,37 @@
                 <h2 class="mb-4">Overview</h2>
                 <p class="lead">The Gender Affairs Department is committed to advancing gender equality, women's rights, and the empowerment of women and girls in Nigeria through policy development, advocacy, and strategic partnerships.</p>
                 
-                <div class="mt-5">
+                <!-- Mission and Vision Cards -->
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-box me-3">
+                                        <i class="fas fa-bullseye text-primary"></i>
+                                    </div>
+                                    <h3 class="h5 mb-0">Our Mission</h3>
+                                </div>
+                                <p class="mb-0">Our Mission is to design and implement policies and programmes geared towards promoting gender equality, equity and protection of the rights of all citizens of Nigeria irrespective of gender.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-box me-3">
+                                        <i class="fas fa-eye text-primary"></i>
+                                    </div>
+                                    <h3 class="h5 mb-0">Mandate</h3>
+                                </div>
+                                <p class="mb-0">The Gender Affairs Department is charged with the responsibilities of promoting Gender Advancement and coordinating the sustenance of a gender equality perspective in the plans, project and programmes of the Federal Government to meet the targets of the National Gender Policy. The Department coordinates interventions for the prevention, response and tracking of the gender mainstreaming at all levels of government.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
                     <h3 class="mb-3">Key Functions</h3>
                     <ul class="list-group list-group-flush mb-4">
                         <li class="list-group-item">Formulate and implement gender policies and programs</li>
@@ -172,6 +229,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="../js/main.js"></script>
     
     <!-- Initialize includes and add back to top functionality -->

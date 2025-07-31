@@ -1,9 +1,41 @@
-/* Scrolling Text Animation */
+/* Welcome Section */
 .welcome-section {
     position: relative;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 0.8rem 0;
     overflow: hidden;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    width: 100%;
+    z-index: 10;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Scrolling Text Animation */
+.scrolling-text {
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 20s linear infinite;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.scrolling-text i {
+    color: #e83e8c;
+    margin-right: 8px;
+}
+
+@media (max-width: 991.98px) {
+    .scrolling-text {
+        font-size: 0.8rem;
+    }
 }
 
 .scrolling-text-container {
@@ -1014,4 +1046,80 @@ h2.section-title, h2.section-title.mb-4 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Press Card Styling */
+.press-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Ensure proper spacing for paragraphs within press card */
+.press-card p {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
+}
+
+/* Keep headings and special elements left-aligned */
+.press-card h1,
+.press-card h2,
+.press-card h3,
+.press-card h4,
+.press-card h5,
+.press-card h6,
+.press-card .news-date,
+.press-card em {
+    text-align: left;
+    text-justify: auto;
+}
+/* ===== Press Release Text Justification ===== */
+.press-release-content p,
+.press-release-content li {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-spacing: -0.05em;
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+}
+
+/* Prevent justification in headings and other elements */
+.press-release-content h1,
+.press-release-content h2,
+.press-release-content h3,
+.press-release-content h4,
+.press-release-content h5,
+.press-release-content h6,
+.press-release-content img,
+.press-release-content .gallery,
+.press-release-content .news-date {
+    text-align: left;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Update existing press-card for better compatibility */
+.press-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Ensure proper spacing for paragraphs within press card */
+.press-card p {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
 }
